@@ -1,0 +1,17 @@
+.container {
+  height: 4em;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.item {
+  width: 56%;
+  overflow: visible;
+  stroke:  #09f;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
