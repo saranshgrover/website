@@ -2,7 +2,11 @@ import * as React from "react";
 import NextHead from "next/head";
 import GoogleFonts from "next-google-fonts";
 
-export const Head = ({ children, title }) => (
+interface Props {
+  title: string;
+}
+
+export const Head = ({ children, title } : React.PropsWithChildren<Props>) => (
   <React.Fragment>
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Alice&display=swap" />
     <NextHead>

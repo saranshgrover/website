@@ -22,9 +22,9 @@ export default function ScaleBox({
 	const transition = useMemo(
 		() => ({
 			duration,
-			delay: delayOrder / 5,
+			delay: delayOrder ? delayOrder / 5 : 0,
 			ease: easing,
-			delayChildren: duration + (delayOrder /5 ) + 5
+			delayChildren: delayOrder ? (duration + (delayOrder /5 ) + 5) : 0
 		}),
 		[duration, delayOrder, easing]
 	)
@@ -43,6 +43,7 @@ export default function ScaleBox({
 	}
 
 	return (
+		// @ts-ignore
 		<MotionBox
 			initial='hidden'
 			animate={inView ? 'show' : 'hidden'}
