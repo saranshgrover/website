@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import ContextWrapper from '../contexts/ContextWrapper'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
 import Layout from '../components/layout/Layout'
 import '../styles/globals.css'
 
@@ -28,11 +28,13 @@ const handExitComplete = (): void => {
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ContextWrapper>
-			<AnimatePresence exitBeforeEnter onExitComplete={handExitComplete}>
-				<Layout>
-				<Component {...pageProps} />
-				</Layout>
-			</AnimatePresence>
+			<AnimateSharedLayout>
+				<AnimatePresence exitBeforeEnter onExitComplete={handExitComplete}>
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</AnimatePresence>
+			</AnimateSharedLayout>
 		</ContextWrapper>
 	)
 }

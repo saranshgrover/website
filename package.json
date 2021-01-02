@@ -20,6 +20,7 @@
     "react-icons": "^4.1.0",
     "react-typography": "^0.16.19",
     "react-use": "^15.3.4",
+    "styled-components": "^5.2.1",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },

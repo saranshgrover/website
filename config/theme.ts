@@ -6,7 +6,7 @@ const theme = extendTheme({
     styles: {
         global: {
             a: {
-                backgroundImage: `linear-gradient(120deg, #B6C7DF 0%, teal 100%)`,
+                backgroundImage: `linear-gradient(120deg, teal 0%, teal 100%)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 0.2em',
                 backgroundPosition: '0 88%',

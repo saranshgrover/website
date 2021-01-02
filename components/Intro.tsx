@@ -21,13 +21,12 @@ import Social from './Social'
 export default function Intro(): ReactElement {
 	const color = useColorModeValue('teal.600', 'teal.200')
 	const size = useBreakpointValue({base: '150px', md: '150px', lg: '300px' })
-	console.log(size)
 
 	return (
 		<IntersectionObserver boxProps={{ flexGrow: 1 }}>
 			<ScaleBox delayOrder={0}>
 				<Flex
-					direction={['column', 'row']}
+					direction={['column-reverse', 'row']}
 					h='calc(100vh - 100px)'
 					justify='space-around'
 					align='center'
