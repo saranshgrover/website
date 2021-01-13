@@ -15,4 +15,5 @@ export interface Project {
 	description: string
 	tags: Tag[]
 	image: string
+	mdFile: string
 }

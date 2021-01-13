@@ -52,6 +52,10 @@ export function ProjectCover({
 			opacity: 0.8,
 			scale: 1.0,
 		},
+		imgExit: {
+			x: 0,
+			opacity:0
+		},
 		normal: {
 			x: 0,
 		},
@@ -100,7 +104,7 @@ export function ProjectCover({
 					onMouseOut={stopControls}>
 					<AnimatedDivider m={['0', '0 0 20px']}>
 						<Heading align='center' fontSize='clamp(24px, 5vw, 50px)'>
-							<Link href={`/projets/${project.id}`}>{project.name}</Link>
+							<Link href={`/projects/${project.id}`}>{project.name}</Link>
 						</Heading>
 					</AnimatedDivider>
 					<Text noOfLines={3} align='center' mb={{ base: '0.5em', md: '2em' }}>
@@ -176,6 +180,7 @@ export function ProjectCover({
 						variants={variants}
 						animate={controls}
 						initial='imgNormal'
+						exit='imgExit'
 						onMouseOver={startControls}
 						onMouseOut={stopControls}
 						_hover={{ filter: 'none' }}

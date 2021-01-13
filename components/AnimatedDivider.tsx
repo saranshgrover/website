@@ -9,7 +9,7 @@ interface Props extends BoxProps {
     times?: number[]
 }
 
-export default function UnderlinedHeading({children,widths=['0%','100%'], times=[0,1], ...boxProps }: React.PropsWithChildren<Props>): ReactElement {
+export default function UnderlinedHeading({children,widths=['0%','80%'], times=[0,1], ...boxProps }: React.PropsWithChildren<Props>): ReactElement {
 	return (
         <Box {...boxProps}>
             {children}

@@ -9,7 +9,8 @@ const pulze:  Project = {
     isFeatured: true,
     tags: [react, pwa, typescript],
     demo: 'https://pulzeapp.netlify.app',
-    github: 'https://github.com/saranshgrover/pulze'
+    github: 'https://github.com/saranshgrover/pulze',
+    mdFile: 'pulze.md'
 
 }
 

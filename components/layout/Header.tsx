@@ -63,7 +63,7 @@ export default function Header(): ReactElement {
 			justify='space-between'
 			wrap='wrap'
 			padding='1rem'
-			w='100%'
+			w='100vw'
 			justify-content='center'>
 			<Box left='0' w='10%'>
 				<Link href='/'>

@@ -9,7 +9,8 @@ const nodus:  Project = {
     isFeatured: true,
     tags: [react, pwa, research, typescript],
     demo: 'https://nodus.saranshgrover.com',
-    github: 'https://github.com/saranshgrover/nodus'
+    github: 'https://github.com/saranshgrover/nodus',
+    mdFile: 'nodus.md'
 
 }
 

@@ -5,6 +5,9 @@ const theme = extendTheme({
     ...typography,
     styles: {
         global: {
+            body: {
+                overflowX: 'hidden'
+            },
             a: {
                 backgroundImage: `linear-gradient(120deg, teal 0%, teal 100%)`,
                 backgroundRepeat: 'no-repeat',

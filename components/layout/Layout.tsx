@@ -8,7 +8,7 @@ export default function Layout({
 	children,
 }: React.PropsWithChildren<{}>): ReactElement {
 	return (
-			<Flex direction='column' minW='100vw' minH='100vh'>
+			<Flex direction='column' w='100vw' minH='100vh'>
 				<Header />
 					{children}
 				<Footer />
