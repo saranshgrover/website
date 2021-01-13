@@ -41,8 +41,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export async function getStaticPaths() {
+	const paths = content.projects.map((project) => ({ params: { id: project.id } }))
 	return {
-		paths: content.projects.map((project) => ({ params: { id: project.id } })),
+		paths: paths,
 		fallback: false,
 	}
 }
