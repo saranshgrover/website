@@ -19,7 +19,7 @@ export default function Footer(): ReactElement {
 				colorScheme='gray'
 				mr={{ base: '0', lg: '2em' }}
 				mt={{ base: '2em', lg: '0' }}>
-				Copyright © 2020 Saransh Grover - All Rights Reserved
+				Copyright © 2021 Saransh Grover - All Rights Reserved
 			</Heading>
 			<Social />
 		</Flex>
