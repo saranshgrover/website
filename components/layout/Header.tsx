@@ -77,8 +77,8 @@ export default function Header(): ReactElement {
 				alignItems='center'
 				flexGrow={1}>
 				<MenuItem href='/projects' title='Projects' />
-				<MenuItem href='/blog' title='Blog' />
-				<MenuItem href='/about' title='About' />
+				<MenuItem href='https://saranshgrover.com/blog' title='Blog' />
+				{/* <MenuItem href='/about' title='About' /> */}
 				<MenuItem href='https://srn.sh/resume' title='Resume' />
 			</Box>
 			<IconButton
