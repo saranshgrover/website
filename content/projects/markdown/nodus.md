@@ -25,6 +25,6 @@ Nodus gives competitors live feedback and notifications during competitions. In 
 - ✔️ Incident Reporting and Management
 
 
-![Nodus Demo]({{site.baseurl}}/images/projects/nodus-demo.gif)
+![Nodus Demo](/images/projects/nodus-demo.gif)
 
 
