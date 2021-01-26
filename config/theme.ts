@@ -20,6 +20,10 @@ const theme = extendTheme({
             }
         }
     },
+    fontSizes: {
+        md: '20px',
+        lg: '20px'
+    },
     config: {
         useSystemColorMode: false,
         initialColorMode: 'dark'

@@ -118,7 +118,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 
 				<Text fontSize='xl'>{project.description}</Text>
 			</Container>
-			<Container centerContent maxW='2xl'>
+			<Container maxW='3xl'>
 				<ReactMarkdown
 					renderers={ChakraUIRenderer()}
 					source={md}

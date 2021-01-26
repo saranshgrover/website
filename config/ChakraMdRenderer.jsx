@@ -52,7 +52,7 @@ export const defaults = {
   imageReference: Image,
   text: props => {
     const { children } = props;
-    return <Text as="span">{children}</Text>;
+    return <Text>{children}</Text>;
   },
   list: props => {
     const { start, ordered, children, depth } = props;
@@ -80,7 +80,7 @@ export const defaults = {
     let checkbox = null;
     if (checked !== null && checked !== undefined) {
       checkbox = (
-        <Checkbox isChecked={checked} isReadOnly>
+        <Checkbox mt={0} isChecked={checked} isReadOnly>
           {children}
         </Checkbox>
       );
@@ -89,6 +89,7 @@ export const defaults = {
       <ListItem
         {...getCoreProps(props)}
         listStyleType={checked !== null ? 'none' : 'inherit'}
+        mt={0}
       >
         {checkbox || children}
       </ListItem>
