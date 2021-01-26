@@ -16,15 +16,14 @@ Nodus is built as a progressive web app because of how important both mobile and
 
 As one of two members on the team, I had a very hands-on role from developing the frontend of the application, to tweaking the database and the schemas. I worked on creating the user facing parts of the application, as well as working exclusively on building out or notification infrastructure.
 
-# The Product [Nodus - Live Event Feedback(https://nodus.saranshgrover.com)
+# The Product: [Nodus - Live Event Feedback](https://nodus.saranshgrover.com)
 
 Nodus gives competitors live feedback and notifications during competitions. In addition, it lets organizers stay on top of schedule, keep in touch with staff and run a successful event.
-- ✔️ Group Assignments and Easy Visibility
-- ✔️ Live Automated Projector
-- ✔️ Push notifications
-- ✔️ Incident Reporting and Management
+
+✔️ Group Assignments and Easy Visibility
+✔️ Live Automated Projector
+✔️ Push notifications
+✔️ Incident Reporting and Management
 
 
 ![Nodus Demo](/images/projects/nodus-demo.gif)
-
-
