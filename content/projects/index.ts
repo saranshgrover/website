@@ -1,8 +1,9 @@
 import nodus from './nodus'
 import pulze from './pulze'
+import politech from './politech'
 import type { Tag } from './tags/'
 export default {
-	projects: [nodus, pulze],
+	projects: [politech,nodus, pulze],
 	tags: ['React', 'Web App', 'Research'],
 }
 
