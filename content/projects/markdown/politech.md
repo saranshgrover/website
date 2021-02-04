@@ -13,4 +13,3 @@ A significant challenge in developing an Automated Redistricting system is showc
 
 
 Another challenge is that redistricting is not just about geometric boundaries - it includes other measures like demographic equality, density, voting patterns, age, gender, income levels, among many others. Hence, it is difficult to visually show how one districting is "better" than the other. Our approach to tackle this problem is to create an objective function value that represents how the district performs compared to the measures mentioned. In order to visaluize that, the objective function value is accompanied with a [http://www.cs.uml.edu/~phoffman/dna1/](RadViz) Visualization of the various measures.
-
