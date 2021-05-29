@@ -18,9 +18,12 @@ import content from '../content/intro'
 import { MdWork, MdLocationOn } from 'react-icons/md'
 import Social from './Social'
 
-export default function Intro(): ReactElement {
+interface Props {
+	md: string
+}
+export default function Intro({ md }: Props): ReactElement {
 	const color = useColorModeValue('teal.600', 'teal.200')
-	const size = useBreakpointValue({base: '150px', md: '150px', lg: '300px' })
+	const size = useBreakpointValue({ base: '150px', md: '150px', lg: '300px' })
 
 	return (
 		<IntersectionObserver boxProps={{ flexGrow: 1 }}>
@@ -65,7 +68,7 @@ export default function Intro(): ReactElement {
 							</WrapItem>
 						</Wrap>
 						<Social />
-						<About />
+						<About md={md} />
 					</Box>
 					<Image
 						src='/images/cartoon-me.jpg'

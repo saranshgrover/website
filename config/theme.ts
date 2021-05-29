@@ -1,15 +1,17 @@
 import {extendTheme} from '@chakra-ui/react'
 import typography from './typography'
+import { mode } from "@chakra-ui/theme-tools"
+
 
 const theme = extendTheme({
     ...typography,
     styles: {
-        global: {
+        global: (props)  => ({
             body: {
                 overflowX: 'hidden'
             },
             a: {
-                backgroundImage: `linear-gradient(120deg, teal 0%, teal 100%)`,
+                backgroundImage: mode('linear-gradient(10deg, #00cdcd 0%, #00cdcd 100%)',"linear-gradient(120deg, teal 0%, teal 100%)")(props),
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: '100% 0.2em',
                 backgroundPosition: '0 88%',
@@ -18,7 +20,7 @@ const theme = extendTheme({
                     backgroundSize: '100% 88%'
                 }
             }
-        }
+        })
     },
     fontSizes: {
         md: '20px',
