@@ -1,5 +1,5 @@
 import {Project} from './index'
-import {react, pwa, research, typescript} from './tags'
+import {react, pwa, research, typescript} from '../tags'
 
 const nodus:  Project = {
     id: 'nodus',

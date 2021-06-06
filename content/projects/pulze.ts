@@ -1,5 +1,5 @@
 import {Project} from './index'
-import {react, pwa, typescript} from './tags' 
+import {react, pwa, typescript} from '../tags' 
 
 const pulze:  Project = {
     id: 'pulze',

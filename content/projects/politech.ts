@@ -1,5 +1,5 @@
 import {Project} from './index'
-import { research, ui, javascript, react} from './tags'
+import { research, ui, javascript, react} from '../tags'
 
 const politech:  Project = {
     id: 'politech',

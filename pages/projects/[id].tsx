@@ -7,6 +7,7 @@ import ProjectInfo from '../../components/ProjectInfo'
 import { GetStaticProps } from 'next'
 import { getMdFor } from '../../logic/markdown'
 import Head from '../../components/head'
+import { getPaths } from '../../logic/staticPaths'
 
 interface Props {
 	md: string
@@ -32,6 +33,7 @@ export default function index({ md }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
+	console.log(getPaths('content/projects'))
 	const md = getMdFor(context!.params!.id as string)
 	if (!md)
 		return {
@@ -46,9 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export async function getStaticPaths() {
-	const paths = content.projects.map((project) => ({
-		params: { id: project.id },
-	}))
+	const paths = getPaths('content/projects')
 	return {
 		paths: paths,
 		fallback: false,
