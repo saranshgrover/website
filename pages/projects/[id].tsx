@@ -33,7 +33,6 @@ export default function index({ md }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	console.log(getPaths('content/projects'))
 	const md = getMdFor(context!.params!.id as string)
 	if (!md)
 		return {

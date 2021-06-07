@@ -7,6 +7,7 @@
 		"create:post": "ts-node createPost.ts",
 		"create:tag": "ts-node createTag.ts",
 		"create:project": "ts-node createProject.ts",
+		"publish:post": "ts-node publishPost.ts",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Saransh Grover",

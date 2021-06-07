@@ -47,5 +47,37 @@ const mdContent = `
 
 `
 
+
+
 fs.writeFileSync(__dirname + `/../content/projects/${proj.id}.ts`,projContent)
-fs.writeFileSync(__dirname + `/../content/projects//markdown/${proj.mdFile}`,mdContent)
+fs.writeFileSync(__dirname + `/../content/projects/markdown/${proj.mdFile}`,mdContent)
+
+
+const allProjects = fs.readdirSync(__dirname + `/../content/projects/`).filter(s => (s.indexOf('.ts') !== -1 || s.indexOf('.js')!==-1) && s !== 'index.ts').map(s => s.slice(0, s.lastIndexOf('.')))
+console.log(allProjects)
+const indexContent = `
+
+${allProjects.map(proj => `import ${proj} from './${proj}'`).join('\n')}
+import type { Tag } from '../tags'
+
+
+export default {
+	projects: [${allProjects.join(',')}],
+}
+
+export interface Project {
+	id: string
+	name: string
+	demo?: string
+	github?: string
+	isFeatured: boolean
+	description: string
+	tags: Tag[]
+	image: string
+	mdFile: string
+}
+
+
+`
+
+fs.writeFileSync(__dirname + `/../content/projects/index.ts`,indexContent)

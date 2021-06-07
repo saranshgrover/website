@@ -1,11 +1,14 @@
+
+
+import cah from './cah'
 import nodus from './nodus'
-import pulze from './pulze'
 import politech from './politech'
+import pulze from './pulze'
 import type { Tag } from '../tags'
 
 
 export default {
-	projects: [politech,nodus, pulze],
+	projects: [cah,nodus,politech,pulze],
 }
 
 export interface Project {
@@ -19,3 +22,5 @@ export interface Project {
 	image: string
 	mdFile: string
 }
+
+

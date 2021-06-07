@@ -8,6 +8,7 @@ if(!args.n || !args.i || !args.p) {
     process.exit(1)
 }
 const t: Tag = {
+	id: args.p,
 	name: args.n,
 	icon: args.i,
 	showIcon:  args.s === 'false' ? false : true,
@@ -21,13 +22,14 @@ const fileContent = `
 import {${t.icon}} from 'react-icons/${iconPathName}'
 import { Tag } from './index'
 
-const javascript: Tag = {
+const ${t.id}: Tag = {
 	name: '${t.name}',
 	icon: ${t.icon},
-	showIcon: ${t.showIcon}
+	showIcon: ${t.showIcon},
+	id: ${t.id}
 }
 
-export default javascript 
+export default ${t.id} 
 
 `
 

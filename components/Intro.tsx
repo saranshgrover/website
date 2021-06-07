@@ -33,23 +33,22 @@ export default function Intro({ md }: Props): ReactElement {
 					h='calc(100vh - 100px)'
 					justify='space-around'
 					align='center'
-					p='4'>
+					p='4'
+				>
 					<Box>
 						<Text color={color} align='left' fontSize='lg'>
 							Hi! My name is
 						</Text>
 						<br />
-						<Heading
-							as='a'
-							size={'2xl'}
-							letterSpacing={{ base: 'normal', md: '0.2em' }}>
+						<Heading as='a' size={'2xl'} letterSpacing={{ base: 'normal', md: '0.2em' }}>
 							{content.name.toLocaleUpperCase()}
 						</Heading>
 						<Wrap
 							direction={['column', 'row']}
 							spacing={{ sm: '0.5em', md: '2em' }}
 							pt={{ base: '2em' }}
-							pb={{ base: '2em' }}>
+							pb={{ base: '2em' }}
+						>
 							{content.titles.map((title, key) => (
 								<WrapItem key={key}>
 									<Flex direction='row' justify='space-between' align='center'>
@@ -72,6 +71,7 @@ export default function Intro({ md }: Props): ReactElement {
 					</Box>
 					<Image
 						src='/images/cartoon-me.jpg'
+						priority={true}
 						htmlWidth={size}
 						htmlHeight={size}
 						borderRadius='full'

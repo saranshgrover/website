@@ -3,11 +3,12 @@
 import {ImAirplane} from 'react-icons/im'
 import { Tag } from './index'
 
-const javascript: Tag = {
+const travel: Tag = {
+	id: 'travel',
 	name: 'Travel',
 	icon: ImAirplane,
 	showIcon: true
 }
 
-export default javascript 
+export default travel 
 

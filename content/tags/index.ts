@@ -2,6 +2,7 @@ import { IconType } from 'react-icons'
 
 
 interface Tag {
+	id: string
 	name: string
 	icon: IconType
 	showIcon: boolean

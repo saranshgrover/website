@@ -8,7 +8,9 @@ const theme = extendTheme({
     styles: {
         global: (props)  => ({
             body: {
-                overflowX: 'hidden'
+                overflowX: 'hidden',
+                bg: mode('gray.100', '#141214')(props),
+
             },
             a: {
                 backgroundImage: mode('linear-gradient(10deg, #00cdcd 0%, #00cdcd 100%)',"linear-gradient(120deg, teal 0%, teal 100%)")(props),
