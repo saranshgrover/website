@@ -1,4 +1,3 @@
-import GoogleFonts from 'next-google-fonts'
 import NextHead from 'next/head'
 import * as React from 'react'
 
@@ -9,35 +8,14 @@ interface Props {
 	url?: string
 }
 
-const Head = ({
-	children,
-	title,
-	description,
-	image,
-	url,
-}: React.PropsWithChildren<Props>) => (
+const Head = ({ children, title, description, image, url }: React.PropsWithChildren<Props>) => (
 	<React.Fragment>
-		<GoogleFonts href='https://fonts.googleapis.com/css2?family=Alice&display=swap' />
 		<NextHead>
 			<meta charSet='UTF-8' />
 			<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-			<link
-				rel='apple-touch-icon'
-				sizes='180x180'
-				href='/apple-touch-icon.png'
-			/>
-			<link
-				rel='icon'
-				type='image/png'
-				sizes='32x32'
-				href='/favicon-32x32.png'
-			/>
-			<link
-				rel='icon'
-				type='image/png'
-				sizes='16x16'
-				href='/favicon-16x16.png'
-			/>
+			<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+			<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+			<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
 			<meta httpEquiv='x-ua-compatible' content='ie=edge' />
 			<meta property='og:title' content={title} />
 			<meta property='twitter:title' content={title} />

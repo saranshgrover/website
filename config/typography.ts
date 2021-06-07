@@ -1,11 +1,10 @@
 export default {
     fonts: {
-        body: 'Alegreya, serif',
+        body: 'Lora, serif',
         heading: 'Alice, serif'
     },
     textStyles: {
     h1: {
-      // you can also use responsive styles
       fontSize: ["48px", "72px"],
       fontWeight: "bold",
       lineHeight: "110%",
