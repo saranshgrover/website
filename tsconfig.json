@@ -16,6 +16,6 @@
 		"jsx": "preserve",
 		"isolatedModules": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/blog/Comments.js"],
 	"exclude": ["node_modules"]
 }
