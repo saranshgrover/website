@@ -1,12 +1,12 @@
 import { GetStaticProps } from 'next'
 import React, { ReactElement } from 'react'
-import { getMdFor } from '../../logic/markdown'
+import { getMdFor } from 'logic/markdown'
 import matter from 'gray-matter'
-import { getPaths } from '../../logic/staticPaths'
-import * as tags from '../../content/tags'
-import { Post } from '../../content/posts'
-import PostComponent from '../../components/PostComponent'
-import Head from '../../components/head'
+import { getPaths } from 'logic/staticPaths'
+import * as tags from 'content/tags'
+import { Post } from 'content/posts'
+import PostComponent from 'components/blog/PostComponent'
+import Head from 'components/head'
 interface Props {
 	md: string
 	post: Omit<Post, 'tags'> & { tags: string[] }
@@ -15,7 +15,7 @@ interface Props {
 export default function PostContent({ md, post: postWithoutTag }: Props): ReactElement {
 	const post: Post = React.useMemo(
 		// @ts-ignore
-		() => ({ ...postWithoutTag, tags: postWithoutTag.tags.map((t) => tags[t] as tags.Tag) }),
+		() => ({ ...postWithoutTag, tags: (postWithoutTag.tags ?? []).map((t) => tags[t] as tags.Tag) }),
 		[postWithoutTag]
 	)
 	return (

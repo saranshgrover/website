@@ -4,10 +4,10 @@ import {travel} from '../tags'
 
 const test:  Post = {
     id: 'test',
-    title: 'Testing 1-2-3-4',
-    description: '',
-    date: 'Sun Jun 06 2021',
-    image: '',
+    title: 'My First Blog Post',
+    description: 'This is a test blog post',
+    date: 'Thu Jun 10 2021',
+    image: '/images/posts/test/blog.jpeg',
     isFeatured: false,
     tags: [travel],
     mdFile: 'test.md',

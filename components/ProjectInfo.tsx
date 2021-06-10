@@ -1,26 +1,13 @@
-import React, { ReactElement } from 'react'
-import { Project } from '../content/projects'
-import { motion } from 'framer-motion'
-import ChakraUIRenderer from '../config/ChakraMdRenderer'
-import ReactMarkdown from 'react-markdown'
-import {
-	Image,
-	Container,
-	Box,
-	VStack,
-	Heading,
-	Text,
-	useColorModeValue,
-	Icon,
-	TagLeftIcon,
-	TagLabel,
-	Button,
-	Stack,
-	Tag,
-} from '@chakra-ui/react'
-import Link from 'next/link'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Box, Button, Container, Heading, Image, Stack, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import Tag from 'components/Tag'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import React, { ReactElement } from 'react'
 import { RiGithubFill } from 'react-icons/ri'
+import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from '../config/ChakraMdRenderer'
+import { Project } from '../content/projects'
 interface Props {
 	project: Project
 	md: string
@@ -28,7 +15,6 @@ interface Props {
 
 const MotionImage = motion.custom(Image)
 const MotionButton = motion.custom(Button)
-const MotionTag = motion.custom(Tag)
 
 export default function ProjectInfo({ project, md }: Props): ReactElement {
 	const iconColor = useColorModeValue('teal.600', 'teal.200')
@@ -69,20 +55,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 				>
 					<Stack maxW='100vw' direction='row' spacing={{ base: '0.5em', md: '2em' }} align='center'>
 						{project.tags.map((tag, index) => (
-							<>
-								{
-									<MotionTag
-										whileHover={{ scale: 1.2 }}
-										variant='subtle'
-										colorScheme='cyan'
-										key={index}
-										aria-label={tag.name}
-									>
-										<TagLeftIcon boxSize='20px' as={tag.icon} />
-										<TagLabel>{tag.name}</TagLabel>
-									</MotionTag>
-								}
-							</>
+							<>{<Tag tag={tag} key={index} />}</>
 						))}
 					</Stack>
 					<Stack direction='row' align='center' spacing='1em'>

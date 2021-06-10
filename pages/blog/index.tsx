@@ -1,13 +1,6 @@
 import React, { ReactElement } from 'react'
+import BlogList from 'components/blog/BlogList'
 
-interface Props {
-    
-}
-
-export default function index({}: Props): ReactElement {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function index(): ReactElement {
+	return <BlogList />
 }
