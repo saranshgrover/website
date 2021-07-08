@@ -11,11 +11,11 @@
 	},
 	"dependencies": {
 		"@chakra-ui/icons": "^1.0.2",
-		"@chakra-ui/react": "^1.0.4",
+		"@chakra-ui/react": "1.6.4",
 		"@emotion/react": "^11.1.2",
 		"@emotion/styled": "^11.0.0",
 		"deepmerge": "^4.2.2",
-		"framer-motion": "^3.1.1",
+		"framer-motion": "3.10.0",
 		"gray-matter": "^4.0.3",
 		"next": "^10.2.3",
 		"react": "17.0.1",

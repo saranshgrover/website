@@ -1,18 +1,16 @@
-import { Box, Button, Container, Flex, Heading, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import Tag from 'components/Tag'
 import intro from 'content/intro'
 import { Post } from 'content/posts'
 import { motion } from 'framer-motion'
 import NextLink from 'next/link'
 import React, { ReactElement } from 'react'
+import Image from 'next/image'
 interface Props {
 	post: Post
 	linkButton?: boolean
 	minHeight?: string
 }
-
-const MotionImage = motion.custom(Image)
-const MotionButton = motion.custom(Button)
 
 export default function PostHeader({ post, linkButton = false, minHeight = '50vh' }: Props): ReactElement {
 	const [gradient, description, gradientLevel] = useColorModeValue(
@@ -20,7 +18,8 @@ export default function PostHeader({ post, linkButton = false, minHeight = '50vh
 		['#000', 'gray.300', 'rgba(0, 0, 0, 0.18)']
 	)
 	return (
-		<Box pos='relative' bgImage={`url(${post.image})`} minW='100vw' minH={minHeight} backgroundSize='cover'>
+		<Box pos='relative' minW='100vw' minH={minHeight}>
+			<Image src={post.image} layout='fill' objectFit='cover' />
 			<Container ml='auto' maxW='2xl' centerContent minH={minHeight}>
 				<Flex minH={minHeight} direction='column' justify='center' alignContent='center' alignItems='center'>
 					<Heading textAlign='center' h='100%' size='4xl' zIndex={2} letterSpacing={4} mb='2rem'>

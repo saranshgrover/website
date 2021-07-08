@@ -29,11 +29,11 @@ export default function Portfolio(): ReactElement {
 	)
 }
 
-const MotionImage = motion.custom(Image)
-const MotionFlex = motion.custom(Flex)
-const MotionIcon = motion.custom(Icon)
-const MotionIconButton = motion.custom(IconButton)
-const MotionContainer = motion.custom(Container)
+const MotionImage = motion(Image)
+const MotionFlex = motion(Flex)
+const MotionIcon = motion(Icon)
+const MotionIconButton = motion(IconButton)
+const MotionContainer = motion(Container)
 
 export function ProjectCover({ project, isEven }: { project: Project; isEven: boolean }): ReactElement {
 	const color = useColorModeValue('gray.200', 'gray.700')

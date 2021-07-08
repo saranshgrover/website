@@ -13,8 +13,8 @@ interface Props {
 	md: string
 }
 
-const MotionImage = motion.custom(Image)
-const MotionButton = motion.custom(Button)
+const MotionImage = motion(Image)
+const MotionButton = motion(Button)
 
 export default function ProjectInfo({ project, md }: Props): ReactElement {
 	const iconColor = useColorModeValue('teal.600', 'teal.200')

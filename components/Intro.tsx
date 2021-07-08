@@ -1,29 +1,21 @@
 import React, { ReactElement } from 'react'
-import {
-	Flex,
-	Box,
-	Heading,
-	Icon,
-	Text,
-	useColorModeValue,
-	Wrap,
-	WrapItem,
-	useBreakpointValue,
-	Image,
-} from '@chakra-ui/react'
+import { Flex, Box, Heading, Icon, Text, useColorModeValue, Wrap, WrapItem, useBreakpointValue } from '@chakra-ui/react'
 import { IntersectionObserver } from '../contexts/IntersectionObserver'
 import About from './About'
 import ScaleBox from '../components/ScaleBox'
 import content from '../content/intro'
 import { MdWork, MdLocationOn } from 'react-icons/md'
 import Social from './Social'
+// import { Image } from 'components/Image'
+import Image from 'next/image'
+import styled from '@emotion/styled'
 
 interface Props {
 	md: string
 }
 export default function Intro({ md }: Props): ReactElement {
 	const color = useColorModeValue('teal.600', 'teal.200')
-	const size = useBreakpointValue({ base: '150px', md: '150px', lg: '300px' })
+	const size = useBreakpointValue({ base: 150, md: 150, lg: 300, default: 150 })
 
 	return (
 		<IntersectionObserver boxProps={{ flexGrow: 1 }}>
@@ -69,12 +61,11 @@ export default function Intro({ md }: Props): ReactElement {
 						<Social />
 						<About md={md} />
 					</Box>
-					<Image
+					<StyledImage
 						src='/images/cartoon-me.jpg'
 						priority={true}
-						htmlWidth={size}
-						htmlHeight={size}
-						borderRadius='full'
+						width={size ?? 300}
+						height={size ?? 300}
 						alt='Saransh Image'
 					/>
 				</Flex>
@@ -82,3 +73,6 @@ export default function Intro({ md }: Props): ReactElement {
 		</IntersectionObserver>
 	)
 }
+const StyledImage = styled(Image)`
+	border-radius: 100px;
+`

@@ -6,7 +6,7 @@ import { ReactElement } from 'react'
 interface Props extends TagProps {
 	tag: TagType
 }
-const MotionTag = motion.custom(ChakraTag)
+const MotionTag = motion(ChakraTag)
 
 export default function Tag({ tag, ...props }: Props): ReactElement {
 	return (

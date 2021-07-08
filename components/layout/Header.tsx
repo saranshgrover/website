@@ -11,7 +11,7 @@ interface MenuItemProps {
 	icon?: ReactElement
 }
 
-const MotionText = motion.custom(Text)
+const MotionText = motion(Text)
 
 function MenuItem({ title, href, icon }: MenuItemProps) {
 	return (
