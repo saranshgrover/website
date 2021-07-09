@@ -16,7 +16,6 @@ export default function index(): ReactElement {
 			return allTags.length > 0 ? [...allTags] : 'featured'
 		} else return 'featured'
 	}, [tags])
-	console.log(tags)
 	React.useEffect(() => {
 		setTags(allTags === 'featured' ? ['life'] : allTags.map((t) => t.id))
 	}, [allTags])
