@@ -8,7 +8,7 @@ import type { Tag } from '../tags'
 
 
 export default {
-	projects: [cah,nodus,politech,pulze],
+	projects: [nodus,politech,pulze],
 }
 
 export interface Project {

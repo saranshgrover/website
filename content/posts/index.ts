@@ -1,12 +1,11 @@
 
 
-import stony_brook from './stony_brook'
 import test from './test'
 import type { Tag } from '../tags'
 
 
 export default {
-	posts: [stony_brook,test],
+	posts: [test],
 }
 
 export interface Post {
