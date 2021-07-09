@@ -7,7 +7,8 @@ const travel: Tag = {
 	id: 'travel',
 	name: 'Travel',
 	icon: ImAirplane,
-	showIcon: true
+	showIcon: true,
+	featured: false
 }
 
 export default travel 

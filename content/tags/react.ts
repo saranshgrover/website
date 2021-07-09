@@ -4,7 +4,8 @@ const react: Tag = {
 	id: 'react',
 	name: 'React',
 	icon: FaReact,
-	showIcon: true
+	showIcon: true,
+	featured: false,
 }
 
 export default react

@@ -2,10 +2,20 @@ import React, { ReactElement, useMemo } from 'react'
 import content, { Post } from 'content/posts'
 import PostHeader from './PostHeader'
 
-export default function BlogList(): ReactElement {
+interface Props {
+	selectedTags: string[]
+}
+export default function BlogList({ selectedTags }: Props): ReactElement {
 	const posts = useMemo(
-		() => content.posts.filter((p) => p.published).sort((a, b) => Date.parse(a.date) - Date.parse(b.date)),
-		[content.posts]
+		() =>
+			content.posts
+				.filter(
+					(p) =>
+						p.published &&
+						(selectedTags.length === 0 || selectedTags.some((id) => p.tags.some((tag) => tag.id === id)))
+				)
+				.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
+		[content.posts, selectedTags]
 	)
 	return (
 		<>

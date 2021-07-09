@@ -28,7 +28,7 @@ export default function PostComponent({ post, md }: Props): ReactElement {
 				align='center'
 				gap='2rem'
 			>
-				<PostHeader post={post} />
+				<PostHeader post={post} minHeight='60vh' />
 				<Container maxW='3xl'>
 					<ReactMarkdown components={ChakraUIRenderer()} children={md} />
 				</Container>

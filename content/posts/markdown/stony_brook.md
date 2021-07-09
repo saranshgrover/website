@@ -1,10 +1,10 @@
 ---
 title: "I'm a Seawolf"
 description: 'Another example of a possible post'
-date: 'Thu Jun 10 2021'
+date: 'Thu Jul 08 2021'
 image: '/images/posts/stony_brook/stony_brook.jpeg'
 tags:
-
+    - life
 isFeatured: false
 mdFile: 'stony_brook.md'
 id: 'stony_brook'

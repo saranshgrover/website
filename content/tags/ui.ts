@@ -5,7 +5,8 @@ const ui: Tag = {
 	name: 'User Interface',
 	id: 'ui',
 	icon: FaPaintBrush,
-	showIcon: false
+	showIcon: false,
+	featured: false
 }
 
 export default ui 

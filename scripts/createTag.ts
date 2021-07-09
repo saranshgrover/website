@@ -12,6 +12,7 @@ const t: Tag = {
 	name: args.n,
 	icon: args.i,
 	showIcon:  args.s === 'false' ? false : true,
+	featured: args.f === 'true' ? true : false
 }
 const path = args.p
 
@@ -23,17 +24,18 @@ import {${t.icon}} from 'react-icons/${iconPathName}'
 import { Tag } from './index'
 
 const ${t.id}: Tag = {
-	name: '${t.name}',
+	name: "${t.name}",
 	icon: ${t.icon},
 	showIcon: ${t.showIcon},
-	id: ${t.id}
+	id: "${t.id}",
+	featured: ${t.featured},
 }
 
 export default ${t.id} 
 
 `
 
-const indexContent = `export {default as ${path}} from './${path}'`
+const indexContent = `\nexport {default as ${path}} from './${path}'`
 
 fs.writeFileSync(__dirname + `/../content/tags/${path}.ts`,fileContent)
 

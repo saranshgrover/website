@@ -5,7 +5,8 @@ const javascript: Tag = {
 	id: 'javascript',
 	name: 'Javascript',
 	icon: SiJavascript,
-	showIcon: true
+	showIcon: true,
+	featured: false,
 }
 
 export default javascript 

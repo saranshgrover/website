@@ -19,15 +19,15 @@ let postMdContent = fs.readFileSync(__dirname + `/../content/posts/markdown/${po
 postMdContent = postMdContent.replace(/^(\n)*---(.|\n)*?---/,'')
 postMdContent = 
 `---
-title: '${post.title}'
-description: '${post.description}'
-date: '${new Date().toDateString()}'
-image: '${post.image}'
+title: "${post.title}"
+description: "${post.description}"
+date: "${new Date().toDateString()}"
+image: "${post.image}"
 tags:
 ${post.tags.map(t => ` - ${t.id}`).join('\n')}
 isFeatured: ${post.isFeatured}
-mdFile: '${post.mdFile}'
-id: '${post.id}'
+mdFile: "${post.mdFile}"
+id: "${post.id}"
 published: true
 ---
 ${postMdContent}
@@ -38,14 +38,14 @@ import {Post} from './index'
 import {${post.tags.map(t => t.id).join(',')}} from '../tags'
 
 const ${post.id}:  Post = {
-    id: '${post.id}',
-    title: '${post.title}',
-    description: '${post.description}',
-    date: '${new Date().toDateString()}',
-    image: '${post.image}',
+    id: "${post.id}",
+    title: "${post.title}",
+    description: "${post.description}",
+    date: "${new Date().toDateString()}",
+    image: "${post.image}",
     isFeatured: ${post.isFeatured},
     tags: [${post.tags.map(t => t.id).join(',')}],
-    mdFile: '${post.mdFile}',
+    mdFile: "${post.mdFile}",
     published: true
 
 }

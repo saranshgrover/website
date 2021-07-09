@@ -5,7 +5,8 @@ const research: Tag = {
     id: 'research',
     name: 'Research',
     icon: GiArchiveResearch,
-    showIcon: false
+    showIcon: false,
+	featured: false,
 }
 
 export default research

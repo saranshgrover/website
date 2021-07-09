@@ -4,7 +4,8 @@ const typescript: Tag = {
 	id: 'typescript',
 	name: 'Typescript',
 	icon: SiTypescript,
-	showIcon: true
+	showIcon: true,
+	featured: false,
 }
 
 export default typescript

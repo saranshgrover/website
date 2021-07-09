@@ -5,7 +5,8 @@ interface Tag {
 	id: string
 	name: string
 	icon: IconType
-	showIcon: boolean
+	showIcon: boolean,
+	featured: boolean
 }
 
 export type { Tag }
@@ -18,3 +19,5 @@ export {default as ui} from './ui'
 
 
 export {default as travel} from './travel'
+export {default as coding} from './coding'
+export {default as life} from './life'

@@ -5,7 +5,8 @@ const pwa: Tag = {
 	id: 'pwa',
 	name: 'Progressive Web App',
 	icon: IoLogoPwa,
-	showIcon: true
+	showIcon: true,
+	featured: false,
 }
 
 export default pwa

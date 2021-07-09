@@ -2,10 +2,10 @@ import { Box, Button, Container, Flex, Heading, Stack, Text, useColorModeValue }
 import Tag from 'components/Tag'
 import intro from 'content/intro'
 import { Post } from 'content/posts'
-import { motion } from 'framer-motion'
 import NextLink from 'next/link'
 import React, { ReactElement } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 interface Props {
 	post: Post
 	linkButton?: boolean
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export default function PostHeader({ post, linkButton = false, minHeight = '50vh' }: Props): ReactElement {
+	const router = useRouter()
 	const [gradient, description, gradientLevel] = useColorModeValue(
 		['#fff', 'gray.800', 'rgba(255,255, 255, 0.18)'],
 		['#000', 'gray.300', 'rgba(0, 0, 0, 0.18)']
@@ -38,7 +39,15 @@ export default function PostHeader({ post, linkButton = false, minHeight = '50vh
 					>
 						<Stack maxW='100vw' direction='row' spacing={{ base: '0.5em', md: '2em' }} align='center'>
 							{post.tags.map((tag, index) => (
-								<Tag tag={tag} key={index} zIndex={2} />
+								<Tag
+									as={!linkButton ? 'button' : undefined}
+									tag={tag}
+									key={index}
+									zIndex={2}
+									onClick={() => {
+										!linkButton && router.push({ pathname: '/blog', query: { tags: tag.id } })
+									}}
+								/>
 							))}
 						</Stack>
 					</Stack>

@@ -5,14 +5,14 @@ import { ReactElement } from 'react'
 
 interface Props extends TagProps {
 	tag: TagType
+	motion?: boolean
 }
 const MotionTag = motion(ChakraTag)
 
-export default function Tag({ tag, ...props }: Props): ReactElement {
+export default function Tag({ tag, motion = true, ...props }: Props): ReactElement {
 	return (
-		// @ts-ignore
 		<MotionTag
-			whileHover={{ scale: 1.2 }}
+			whileHover={{ scale: motion ? 1.2 : 1 }}
 			variant='subtle'
 			colorScheme='cyan'
 			{...props}
