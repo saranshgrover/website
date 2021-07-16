@@ -6,6 +6,8 @@ import NextLink from 'next/link'
 import React, { ReactElement } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { AiFillStar } from 'react-icons/ai'
+import { featured } from 'content/tags'
 interface Props {
 	post: Post
 	linkButton?: boolean
@@ -57,7 +59,7 @@ export default function PostHeader({ post, linkButton = false, minHeight = '50vh
 					{linkButton && (
 						<NextLink href={`/blog/${post.id}`}>
 							<Button zIndex={2} colorScheme='teal' variant='outline' borderRadius='full' minW='20vw'>
-								{`Read More & Comment`}
+								{`Read Post & Comment`}
 							</Button>
 						</NextLink>
 					)}

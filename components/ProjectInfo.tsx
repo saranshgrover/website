@@ -6,6 +6,7 @@ import Link from 'next/link'
 import React, { ReactElement } from 'react'
 import { RiGithubFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import ChakraUIRenderer from '../config/ChakraMdRenderer'
 import { Project } from '../content/projects'
 interface Props {
@@ -95,7 +96,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 				<Text fontSize='xl'>{project.description}</Text>
 			</Container>
 			<Container maxW='3xl'>
-				<ReactMarkdown components={ChakraUIRenderer()} children={md} />
+				<ReactMarkdown rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={md} />
 			</Container>
 		</VStack>
 	)

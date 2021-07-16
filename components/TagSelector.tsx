@@ -18,22 +18,24 @@ export default function TagSelector({ tags: selectedTags, setTags, all }: Props)
 	return (
 		<Center mb='2em'>
 			<Wrap>
-				{allTags.map((tag) => (
-					<Tag
-						as='button'
-						key={tag.id}
-						tag={tag}
-						motion={false}
-						size='lg'
-						colorScheme='teal'
-						variant={selectedTags.includes(tag.id) ? 'solid' : 'outline'}
-						onClick={() =>
-							selectedTags.includes(tag.id)
-								? setTags(selectedTags.filter((id) => id !== tag.id))
-								: setTags(selectedTags.concat(tag.id))
-						}
-					/>
-				))}
+				{allTags
+					.sort((a) => (a.id === 'featured' ? -1 : a.featured ? 0 : 1))
+					.map((tag) => (
+						<Tag
+							as='button'
+							key={tag.id}
+							tag={tag}
+							motion={false}
+							size='lg'
+							colorScheme='teal'
+							variant={selectedTags.includes(tag.id) ? 'solid' : 'outline'}
+							onClick={() =>
+								selectedTags.includes(tag.id)
+									? setTags(selectedTags.filter((id) => id !== tag.id))
+									: setTags(selectedTags.concat(tag.id))
+							}
+						/>
+					))}
 			</Wrap>
 		</Center>
 	)

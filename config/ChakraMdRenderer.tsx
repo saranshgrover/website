@@ -27,9 +27,7 @@ type GetCoreProps = {
 }
 
 function getCoreProps(props: GetCoreProps): any {
-	return props['data-sourcepos']
-		? { 'data-sourcepos': props['data-sourcepos'] }
-		: {}
+	return props['data-sourcepos'] ? { 'data-sourcepos': props['data-sourcepos'] } : {}
 }
 
 interface Defaults extends Components {
@@ -39,11 +37,19 @@ interface Defaults extends Components {
 export const defaults: Defaults = {
 	p: (props) => {
 		const { children } = props
-		return <Text fontSize='md' mb={2}>{children}</Text>
+		return (
+			<Text fontSize='md' mb={10}>
+				{children}
+			</Text>
+		)
 	},
 	em: (props) => {
 		const { children } = props
-		return <Text as='em'>{children}</Text>
+		return (
+			<Text fontSize='md' as='em'>
+				{children}
+			</Text>
+		)
 	},
 	blockquote: (props) => {
 		const { children } = props
@@ -60,20 +66,15 @@ export const defaults: Defaults = {
 			return <Code p={2} children={children} />
 		}
 
-		return (
-			<Code
-				className={className}
-				whiteSpace='break-spaces'
-				d='block'
-				w='full'
-				p={2}
-				children={children}
-			/>
-		)
+		return <Code className={className} whiteSpace='break-spaces' d='block' w='full' p={2} children={children} />
 	},
 	del: (props) => {
 		const { children } = props
-		return <Text as='del'>{children}</Text>
+		return (
+			<Text fontSize='md' as='del'>
+				{children}
+			</Text>
+		)
 	},
 	hr: (props) => {
 		return <Divider />
@@ -82,7 +83,11 @@ export const defaults: Defaults = {
 	img: Image,
 	text: (props) => {
 		const { children } = props
-		return <Text fontSize='md'>{children}</Text>
+		return (
+			<Text fontSize='md' mb={10}>
+				{children}
+			</Text>
+		)
 	},
 	ul: (props) => {
 		const { ordered, children, depth } = props
@@ -95,12 +100,7 @@ export const defaults: Defaults = {
 		}
 		if (depth === 1) styleType = 'circle'
 		return (
-			<Element
-				spacing={2}
-				as={ordered ? 'ol' : 'ul'}
-				styleType={styleType}
-				pl={4}
-				{...attrs}>
+			<Element fontSize='md' spacing={2} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} {...attrs}>
 				{children}
 			</Element>
 		)
@@ -116,12 +116,7 @@ export const defaults: Defaults = {
 		}
 		if (depth === 1) styleType = 'circle'
 		return (
-			<Element
-				spacing={2}
-				as={ordered ? 'ol' : 'ul'}
-				styleType={styleType}
-				pl={4}
-				{...attrs}>
+			<Element spacing={2} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} {...attrs}>
 				{children}
 			</Element>
 		)
@@ -137,9 +132,7 @@ export const defaults: Defaults = {
 			)
 		}
 		return (
-			<ListItem
-				{...getCoreProps(props)}
-				listStyleType={checked !== null ? 'none' : 'inherit'}>
+			<ListItem {...getCoreProps(props)} listStyleType={checked !== null ? 'none' : 'inherit'}>
 				{checkbox || children}
 			</ListItem>
 		)
@@ -148,11 +141,7 @@ export const defaults: Defaults = {
 		const { level, children } = props
 		const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
 		return (
-			<Heading
-				my={4}
-				as={`h${level}`}
-				size={sizes[`${level - 1}`]}
-				{...getCoreProps(props)}>
+			<Heading mt={4} mb={12} as={`h${level}`} size={sizes[`${level - 1}`]} {...getCoreProps(props)}>
 				{children}
 			</Heading>
 		)

@@ -1,5 +1,16 @@
 import React, { ReactElement } from 'react'
-import { Flex, Box, Heading, Icon, Text, useColorModeValue, Wrap, WrapItem, useBreakpointValue } from '@chakra-ui/react'
+import {
+	Flex,
+	Box,
+	Heading,
+	Icon,
+	Text,
+	useColorModeValue,
+	Wrap,
+	WrapItem,
+	useBreakpointValue,
+	Stack,
+} from '@chakra-ui/react'
 import { IntersectionObserver } from '../contexts/IntersectionObserver'
 import About from './About'
 import ScaleBox from '../components/ScaleBox'
@@ -15,7 +26,8 @@ interface Props {
 }
 export default function Intro({ md }: Props): ReactElement {
 	const color = useColorModeValue('teal.600', 'teal.200')
-	const size = useBreakpointValue({ base: 150, md: 150, lg: 300, default: 150 })
+	const size = useBreakpointValue({ base: 300, md: 300, lg: 300, default: 300 })
+	const showLargeImage = useBreakpointValue({ base: false, md: false, lg: true, default: true })
 
 	return (
 		<IntersectionObserver boxProps={{ flexGrow: 1 }}>
@@ -35,39 +47,43 @@ export default function Intro({ md }: Props): ReactElement {
 						<Heading as='a' size={'2xl'} letterSpacing={{ base: 'normal', md: '0.2em' }}>
 							{content.name.toLocaleUpperCase()}
 						</Heading>
-						<Wrap
+						<Stack
 							direction={['column', 'row']}
 							spacing={{ sm: '0.5em', md: '2em' }}
 							pt={{ base: '2em' }}
 							pb={{ base: '2em' }}
 						>
-							{content.titles.map((title, key) => (
-								<WrapItem key={key}>
-									<Flex direction='row' justify='space-between' align='center'>
-										<Icon as={MdWork} color={color} boxSize={8} />
-										<Text fontSize='xl' textDecoration='teal double underline'>
-											{title}
-										</Text>
-									</Flex>
-								</WrapItem>
+							{content.titles.map((title) => (
+								<Flex
+									key={title}
+									direction='row'
+									justify={['space-evenly', 'space-around']}
+									align='center'
+								>
+									<Icon as={MdWork} color={color} boxSize={8} />
+									<Text fontSize='xl' textDecoration='teal double underline'>
+										{title}
+									</Text>
+								</Flex>
 							))}
-							<WrapItem>
+							<Flex direction='row' align='center' justify={['space-evenly', 'space-around']}>
 								<Icon as={MdLocationOn} color={color} boxSize={8} />
 								<Text fontSize='xl' textDecoration='teal double underline'>
 									{content.location}
 								</Text>
-							</WrapItem>
-						</Wrap>
+							</Flex>
+						</Stack>
 						<Social />
 						<About md={md} />
 					</Box>
-					<StyledImage
-						src='/images/cartoon-me.jpg'
-						priority={true}
-						width={size ?? 300}
-						height={size ?? 300}
-						alt='Saransh Image'
-					/>
+					{showLargeImage && (
+						<StyledImage
+							src='/images/cartoon-me.jpg'
+							width={size ?? 300}
+							height={size ?? 300}
+							alt='Saransh Image'
+						/>
+					)}
 				</Flex>
 			</ScaleBox>
 		</IntersectionObserver>

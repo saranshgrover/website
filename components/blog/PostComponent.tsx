@@ -1,13 +1,13 @@
-import { Button, Container, Box, useColorModeValue, VStack, Heading, useDisclosure, Center } from '@chakra-ui/react'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { Box, Button, Center, Container, Heading, useColorModeValue, useDisclosure, VStack } from '@chakra-ui/react'
+import AnimatedDivider from 'components/AnimatedDivider'
 import ChakraUIRenderer from 'config/ChakraMdRenderer'
 import { Post } from 'content/posts'
-import { motion } from 'framer-motion'
 import React, { ReactElement } from 'react'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 import Comments from './Comments'
 import PostHeader from './PostHeader'
-import AnimatedDivider from 'components/AnimatedDivider'
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 interface Props {
 	post: Post
 	md: string
@@ -30,7 +30,7 @@ export default function PostComponent({ post, md }: Props): ReactElement {
 			>
 				<PostHeader post={post} minHeight='60vh' />
 				<Container maxW='3xl'>
-					<ReactMarkdown components={ChakraUIRenderer()} children={md} />
+					<ReactMarkdown rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={md} />
 				</Container>
 			</VStack>
 			<Box bg={isOpen ? commentColor : 'auto'} mt='2rem'>

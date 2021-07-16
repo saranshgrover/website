@@ -17,9 +17,11 @@ export default function index(): ReactElement {
 		} else return 'featured'
 	}, [tags])
 	React.useEffect(() => {
-		setTags(allTags === 'featured' ? ['life'] : allTags.map((t) => t.id))
+		setTags(allTags === 'featured' ? ['featured', 'coding', 'life'] : allTags.map((t) => t.id))
 	}, [allTags])
-	const [selectedTags, setTags] = React.useState([allTags === 'featured' ? 'life' : allTags[0].id])
+	const [selectedTags, setTags] = React.useState(
+		allTags === 'featured' ? ['featured', 'coding', 'life'] : [allTags[0].id]
+	)
 	return (
 		<>
 			<TagSelector all={allTags} tags={selectedTags} setTags={setTags} />

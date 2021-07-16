@@ -24,7 +24,8 @@
 		"react-icons": "^4.1.0",
 		"react-inline-script": "^1.2.0",
 		"react-markdown": "^6.0.2",
-		"react-use": "^15.3.4"
+		"react-use": "^15.3.4",
+		"rehype-raw": "^5.1.0"
 	},
 	"devDependencies": {
 		"@types/minimist": "^1.2.1",

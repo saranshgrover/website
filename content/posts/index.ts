@@ -1,11 +1,11 @@
 
 
-import test from './test'
+import new_site from './new_site'
 import type { Tag } from '../tags'
 
 
 export default {
-	posts: [test],
+	posts: [new_site],
 }
 
 export interface Post {
