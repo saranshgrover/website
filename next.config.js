@@ -5,5 +5,15 @@ module.exports = {
     },
     env: {
         SITE_URL: 'https://saranshgrover.com'
-    }
+    },
+    async redirects() {
+        return [
+            {
+                source: '/politech',
+                destination: '/projects/politech',
+                permanent: true,
+            },
+        ]
+    },
+
 }
