@@ -26,7 +26,7 @@ interface Props {
 }
 export default function Intro({ md }: Props): ReactElement {
 	const color = useColorModeValue('teal.600', 'teal.200')
-	const size = useBreakpointValue({ base: 300, md: 300, lg: 300, default: 300 })
+	const size = useBreakpointValue({ base: 300, md: 300, lg: 500, default: 300 })
 	const showLargeImage = useBreakpointValue({ base: false, md: false, lg: true, default: true })
 
 	return (
@@ -77,12 +77,14 @@ export default function Intro({ md }: Props): ReactElement {
 						<About md={md} />
 					</Box>
 					{showLargeImage && (
-						<StyledImage
-							src='/images/cartoon-me.jpg'
-							width={size ?? 300}
-							height={size ?? 300}
-							alt='Saransh Image'
-						/>
+						<figure style={{ perspective: '1500px' }}>
+							<StyledImage
+								src='/images/cartoon-me.jpg'
+								width={size ?? 300}
+								height={size ?? 300}
+								alt='Saransh Image'
+							/>
+						</figure>
 					)}
 				</Flex>
 			</ScaleBox>
@@ -91,4 +93,10 @@ export default function Intro({ md }: Props): ReactElement {
 }
 const StyledImage = styled(Image)`
 	border-radius: 100px;
+	transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
+	box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.25);
+	transition: 0.3s;
+	&:hover {
+		transform: rotate(0);
+	}
 `
