@@ -3,4 +3,5 @@ export default {
     linkedin: 'https://srn.sh/linkedin',
     github: 'https://srn.sh/github',
     email: 'mailto:contact@saranshgrover.com',
+    polywork: 'https://work.saranshgrover.com'
 }

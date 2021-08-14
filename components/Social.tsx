@@ -4,6 +4,7 @@ import { IconType } from 'react-icons'
 import { MdEmail } from 'react-icons/md'
 import { motion } from 'framer-motion'
 import { IconButton, Stack, useColorModeValue } from '@chakra-ui/react'
+import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import socials from '../content/social'
 
@@ -16,6 +17,7 @@ const socialIcons: SocialIcon = {
 	github: RiGithubFill,
 	linkedin: RiLinkedinBoxLine,
 	email: MdEmail,
+	polywork: () => <Icon icon='simple-icons:polywork' />,
 }
 
 const MotionIcon = motion(IconButton)
