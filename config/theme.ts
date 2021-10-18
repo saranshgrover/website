@@ -9,7 +9,7 @@ const theme = extendTheme({
         global: (props)  => ({
             body: {
                 overflowX: 'hidden',
-                bg: mode('gray.100', '#141214')(props),
+                bg: mode('white', '#141214')(props),
 
             },
             a: {
