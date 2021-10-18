@@ -1,6 +1,6 @@
 
 
-import cah from './cah'
+import century_events_dashboard from './century_events_dashboard'
 import nodus from './nodus'
 import politech from './politech'
 import pulze from './pulze'
@@ -8,7 +8,7 @@ import type { Tag } from '../tags'
 
 
 export default {
-	projects: [nodus,politech,pulze],
+	projects: [century_events_dashboard,nodus,politech,pulze],
 }
 
 export interface Project {

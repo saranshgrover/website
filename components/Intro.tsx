@@ -40,34 +40,37 @@ export default function Intro({ md }: Props): ReactElement {
 					p='4'
 				>
 					<Box>
-						<Text color={color} align='left' fontSize='lg'>
-							Hi! My name is
+						<Text color={color} align='left' fontSize='xl' pb='1em'>
+							{`Hello 👋🏻 My name is`}
 						</Text>
-						<br />
+
 						<Heading as='a' size={'2xl'} letterSpacing={{ base: 'normal', md: '0.2em' }}>
 							{content.name.toLocaleUpperCase()}
 						</Heading>
+
 						<Stack
-							direction={['column', 'row']}
+							direction={['column']}
 							spacing={{ sm: '0.5em', md: '2em' }}
 							pt={{ base: '2em' }}
 							pb={{ base: '2em' }}
 						>
-							{content.titles.map((title) => (
-								<Flex
-									key={title}
-									direction='row'
-									justify={['space-evenly', 'space-around']}
-									align='center'
-								>
-									<Icon as={MdWork} color={color} boxSize={8} />
-									<Text fontSize='xl' textDecoration='teal double underline'>
-										{title}
-									</Text>
-								</Flex>
-							))}
-							<Flex direction='row' align='center' justify={['space-evenly', 'space-around']}>
-								<Icon as={MdLocationOn} color={color} boxSize={8} />
+							<Stack direction={['column', 'row']}>
+								{content.titles.map((title) => (
+									<Flex
+										key={title}
+										direction='row'
+										justify={['flex-start', 'space-around']}
+										align='center'
+									>
+										<Icon as={MdWork} color={color} boxSize={8} pr={['0.2em', '0.5em']} />
+										<Text fontSize='xl' textDecoration='teal double underline'>
+											{title}
+										</Text>
+									</Flex>
+								))}
+							</Stack>
+							<Flex direction='row' align='center' justify={['flex-start']}>
+								<Icon as={MdLocationOn} color={color} boxSize={8} pr={['0.2em', '0.5em']} />
 								<Text fontSize='xl' textDecoration='teal double underline'>
 									{content.location}
 								</Text>

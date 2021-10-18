@@ -55,6 +55,7 @@ export default function Header(): ReactElement {
 			justify='space-between'
 			wrap='wrap'
 			padding='1rem'
+			pb='5rem'
 			w='100vw'
 			justify-content='center'
 		>

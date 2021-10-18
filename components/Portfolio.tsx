@@ -172,7 +172,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 				</MotionContainer>
 			</Box>
 			<Box h={['auto', '40vh']}>
-				<Link href={project.demo ?? ''}>
+				<Link href={`/projects/${project.id}`}>
 					<MotionImage
 						variants={variants}
 						animate={controls}

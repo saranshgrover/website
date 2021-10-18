@@ -19,7 +19,7 @@ export default function About({ md }: Props): ReactElement {
 	return (
 		<IntersectionObserver>
 			<ScaleBox delayOrder={0}>
-				<Flex direction='column' maxW='700px' justify='space-around' align='center' mt='4'>
+				<Flex direction='column' maxW='700px' justify='space-around' mt='4'>
 					<AnimatedDivider />
 					{/* {paragraphs.map((paragraph, key) => (
 						<Text fontSize='xl' key={key}>{paragraph}</Text>

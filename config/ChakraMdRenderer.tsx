@@ -7,6 +7,7 @@ import {
 	Link,
 	Checkbox,
 	ListItem,
+	ListIcon,
 	Heading,
 	Image,
 	OrderedList,
@@ -18,6 +19,7 @@ import {
 	Th,
 	Td,
 } from '@chakra-ui/react'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 import deepmerge from 'deepmerge'
 import { Components } from 'react-markdown/src/ast-to-react'
 
@@ -133,6 +135,7 @@ export const defaults: Defaults = {
 		}
 		return (
 			<ListItem {...getCoreProps(props)} listStyleType={checked !== null ? 'none' : 'inherit'}>
+				{/* <ListIcon as={AiOutlineArrowRight} color='primary' /> */}
 				{checkbox || children}
 			</ListItem>
 		)
