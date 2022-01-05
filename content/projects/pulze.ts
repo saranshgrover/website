@@ -6,7 +6,7 @@ const pulze:  Project = {
     name: 'Pulze',
     description: 'Fluid, customizable speedcubing timer',
     image: '/images/projects/pulze.png',
-    isFeatured: true,
+    isFeatured: false,
     tags: [react, pwa, typescript],
     demo: 'https://pulzeapp.netlify.app',
     github: 'https://github.com/saranshgrover/pulze',

@@ -1,7 +1,7 @@
 export default {
     fonts: {
-        body: 'Lora, serif',
-        heading: 'Alice, serif'
+        body: 'Poppins, sans-serif',
+        heading: 'Open Sans Condensed, sans-serif'
     },
     textStyles: {
     h1: {

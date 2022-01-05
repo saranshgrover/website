@@ -44,7 +44,7 @@ export default function Intro({ md }: Props): ReactElement {
 							{`Hello 👋🏻 My name is`}
 						</Text>
 
-						<Heading as='a' size={'2xl'} letterSpacing={{ base: 'normal', md: '0.2em' }}>
+						<Heading size={'2xl'} letterSpacing={{ base: 'normal', md: '0.1em' }}>
 							{content.name.toLocaleUpperCase()}
 						</Heading>
 
@@ -54,7 +54,7 @@ export default function Intro({ md }: Props): ReactElement {
 							pt={{ base: '2em' }}
 							pb={{ base: '2em' }}
 						>
-							<Stack direction={['column', 'row']}>
+							<Stack direction={['column', 'row']} spacing={{ base: '0.5em', md: '1em' }}>
 								{content.titles.map((title) => (
 									<Flex
 										key={title}

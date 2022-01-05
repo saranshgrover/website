@@ -1,5 +1,17 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Box, Button, Container, Heading, Image, Stack, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import {
+	Box,
+	Button,
+	Container,
+	Divider,
+	Heading,
+	Image,
+	Stack,
+	Text,
+	useColorMode,
+	useColorModeValue,
+	VStack,
+} from '@chakra-ui/react'
 import Tag from 'components/Tag'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -19,6 +31,7 @@ const MotionButton = motion(Button)
 
 export default function ProjectInfo({ project, md }: Props): ReactElement {
 	const iconColor = useColorModeValue('teal.600', 'teal.200')
+	const { colorMode } = useColorMode()
 	return (
 		<VStack
 			maxW='100vw'
@@ -29,22 +42,24 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 			m={{ base: '2rem', md: '4rem' }}
 			gap='2rem'
 		>
-			<Box h={['30vh', '50vh']}>
+			<Box h='auto'>
 				{project.image && (
 					<MotionImage
-						h={['30vh', '50vh']}
-						whileHover={{ scale: 1.1 }}
-						objectFit='cover'
+						m='auto'
+						h='auto'
+						w='70%'
+						whileHover={{ scale: 1.05 }}
+						objectFit='steretch'
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						src={project.image}
+						src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
 						layoutId={`${project.id}-image`}
 						cursor='pointer'
 					/>
 				)}
 			</Box>
 			<Container ml='auto' maxW='2xl' centerContent>
-				<Heading mb='2rem' as='a' size='3xl'>
+				<Heading mb='2rem' size='2xl'>
 					{project.name}
 				</Heading>
 				<Stack
@@ -93,7 +108,8 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 					</Stack>
 				</Stack>
 
-				<Text fontSize='xl'>{project.description}</Text>
+				{project.demo && <Text fontSize='xl'>{project.description}</Text>}
+				<Divider />
 			</Container>
 			<Container maxW='3xl'>
 				<ReactMarkdown rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={md} />

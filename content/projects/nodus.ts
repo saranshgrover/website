@@ -6,7 +6,7 @@ const nodus:  Project = {
     name: 'Nodus',
     description: 'Event management application for online tournaments and competitions. User-centric design with visualizations and projection features built through a live score and results system.',
     image: '/images/projects/nodus.png',
-    isFeatured: true,
+    isFeatured: false,
     tags: [react, pwa, research, typescript],
     demo: 'https://nodus.saranshgrover.com',
     github: 'https://github.com/saranshgrover/nodus',

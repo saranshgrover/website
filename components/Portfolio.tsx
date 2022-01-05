@@ -10,7 +10,9 @@ import {
 	Stack,
 	Tag,
 	Text,
+	useColorMode,
 	useColorModeValue,
+	useMediaQuery,
 } from '@chakra-ui/react'
 import { motion, useAnimation } from 'framer-motion'
 import Link from 'next/link'
@@ -38,8 +40,11 @@ const MotionContainer = motion(Container)
 export function ProjectCover({ project, isEven }: { project: Project; isEven: boolean }): ReactElement {
 	const color = useColorModeValue('gray.200', 'gray.700')
 	const iconColor = useColorModeValue('teal.600', 'teal.200')
+	const { colorMode } = useColorMode()
 	const controls = useAnimation()
 	const containerControls = useAnimation()
+	const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
+
 	const variants = {
 		imgNormal: {
 			opacity: 0.8,
@@ -59,6 +64,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 			x: i ? 300 : -300,
 		}),
 	}
+	const variantsAfterMobile = React.useMemo(() => (isLargerThan480 ? variants : {}), [isLargerThan480])
 	function startControls() {
 		containerControls.start('textHover')
 		controls.start('scaled')
@@ -92,18 +98,18 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 					ml={['0', null, isEven ? '-200px' : 'auto']}
 					pb='2em'
 					animate={containerControls}
-					variants={variants}
+					variants={variantsAfterMobile}
 					custom={isEven}
 					initial='normal'
 					onMouseOver={startControls}
 					onMouseOut={stopControls}
 				>
 					<AnimatedDivider m={['0', '0 0 20px']}>
-						<Heading align='center' fontSize='clamp(24px, 5vw, 50px)'>
+						<Heading align='center' fontSize='clamp(24px, 5vw, 45px)'>
 							<Link href={`/projects/${project.id}`}>{project.name}</Link>
 						</Heading>
 					</AnimatedDivider>
-					<Text noOfLines={3} align='center' mb={{ base: '0.5em', md: '2em' }}>
+					<Text fontSize='sm' noOfLines={4} align='center' mb={{ base: '0.5em', md: '2em' }}>
 						{project.description}
 					</Text>
 					<Stack
@@ -186,7 +192,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 						objectFit='contain'
 						cursor='pointer'
 						whileHover={{ opacity: 1 }}
-						src={project.image}
+						src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
 					/>
 				</Link>
 			</Box>
