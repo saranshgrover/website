@@ -1,23 +1,26 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+// /pages/_document.js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-class MyDocument extends Document {
-	static async getInitialProps(ctx: DocumentContext) {
-		const initialProps = await Document.getInitialProps(ctx)
-		return { ...initialProps }
-	}
-
+import { GA_TACKING_ID } from 'config/settings'
+export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html>
 				<Head>
-					<link
-						rel='alternate'
-						type='application/rss+xml'
-						title='Saransh Grover - Blog RSS Feed'
-						href={`${process.env.SITE_URL}/rss.xml`}
+					{/* Global Site Tag (gtag.js) - Google Analytics */}
+					<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TACKING_ID}`} />
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+						}}
 					/>
-					<link rel='preconnect' href='https://fonts.gstatic.com' />
-					<link href='https://fonts.googleapis.com/css2?family=Lora&display=swap' rel='stylesheet' />
 				</Head>
 				<body>
 					<Main />
@@ -27,5 +30,3 @@ class MyDocument extends Document {
 		)
 	}
 }
-
-export default MyDocument

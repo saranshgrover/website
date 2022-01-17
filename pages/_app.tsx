@@ -2,7 +2,10 @@ import type { AppProps } from 'next/app'
 import ContextWrapper from '../contexts/ContextWrapper'
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
 import Layout from '../components/layout/Layout'
+import * as gtag from '../config/gtag'
 import '../styles/globals.css'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 // The handler to smoothly scroll to the element into view
 const handExitComplete = (): void => {
@@ -26,6 +29,17 @@ const handExitComplete = (): void => {
 	}
 }
 function MyApp({ Component, pageProps }: AppProps) {
+	const router = useRouter()
+	useEffect(() => {
+		const handleRouteChange = (url: string) => {
+			gtag.pageview(url)
+		}
+		router.events.on('routeChangeComplete', handleRouteChange)
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange)
+		}
+	}, [router.events])
+
 	return (
 		<ContextWrapper>
 			<AnimateSharedLayout>

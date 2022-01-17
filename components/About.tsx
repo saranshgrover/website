@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from '../config/ChakraMdRenderer'
 import { GetStaticProps } from 'next'
 import { getMdFor } from '../logic/markdown'
-import { Container } from 'next/app'
+import { Container } from '@chakra-ui/react'
 import rehypeRaw from 'rehype-raw'
 
 interface Props {

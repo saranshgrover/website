@@ -19,6 +19,7 @@ import React, { ReactElement } from 'react'
 import { RiGithubFill } from 'react-icons/ri'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 import ChakraUIRenderer from '../config/ChakraMdRenderer'
 import { Project } from '../content/projects'
 interface Props {
@@ -112,7 +113,12 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 				<Divider />
 			</Container>
 			<Container maxW='3xl'>
-				<ReactMarkdown rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={md} />
+				<ReactMarkdown
+					rehypePlugins={[rehypeRaw]}
+					remarkPlugins={[remarkGfm]}
+					components={ChakraUIRenderer()}
+					children={md}
+				/>
 			</Container>
 		</VStack>
 	)

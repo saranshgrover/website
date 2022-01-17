@@ -22,6 +22,8 @@ import {
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import deepmerge from 'deepmerge'
 import { Components } from 'react-markdown/src/ast-to-react'
+import ReactMarkdown from 'react-markdown'
+import Carousel, { Modal, ModalGateway } from 'react-images'
 
 type GetCoreProps = {
 	children?: React.ReactNode
@@ -37,6 +39,31 @@ interface Defaults extends Components {
 }
 
 export const defaults: Defaults = {
+	root: ({ children }) => {
+		const TOCLines = children.reduce((acc, { key, props }) => {
+			// Skip non-headings
+			if (key.indexOf('heading') !== 0) {
+				return acc
+			}
+
+			// Indent by two spaces per heading level after h1
+			let indent = ''
+			for (let idx = 1; idx < props.level; idx++) {
+				indent = `${indent}  `
+			}
+
+			// Append line to TOC
+			// This is where you'd add a link using Markdown syntax if you wanted
+			return acc.concat([`${indent}* ${props.children}`])
+		}, [])
+
+		return (
+			<div>
+				<ReactMarkdown source={TOCLines.join('\n')} />
+				{children}
+			</div>
+		)
+	},
 	p: (props) => {
 		const { children } = props
 		return (
@@ -82,7 +109,28 @@ export const defaults: Defaults = {
 		return <Divider />
 	},
 	a: Link,
-	img: Image,
+	img: (props) => {
+		const [viewerIsOpen, setViewerIsOpen] = React.useState(false)
+		const openLightbox = React.useCallback(() => {
+			setViewerIsOpen(true)
+		}, [])
+		const closeLightbox = () => {
+			setViewerIsOpen(false)
+		}
+
+		return (
+			<>
+				<ModalGateway>
+					{viewerIsOpen && (
+						<Modal onClose={closeLightbox}>
+							<Carousel currentIndex={0} views={[{ source: props.src }]} />
+						</Modal>
+					)}
+				</ModalGateway>
+				<Image cursor='pointer' onClick={openLightbox} {...props} />
+			</>
+		)
+	},
 	text: (props) => {
 		const { children } = props
 		return (
@@ -163,6 +211,7 @@ export const defaults: Defaults = {
 
 function ChakraUIRenderer(theme?: Defaults, merge = true): Components {
 	const elements = {
+		root: defaults.root,
 		p: defaults.p,
 		em: defaults.em,
 		blockquote: defaults.blockquote,

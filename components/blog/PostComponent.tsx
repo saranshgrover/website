@@ -6,6 +6,7 @@ import { Post } from 'content/posts'
 import React, { ReactElement } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 import Comments from './Comments'
 import PostHeader from './PostHeader'
 interface Props {
@@ -30,7 +31,12 @@ export default function PostComponent({ post, md }: Props): ReactElement {
 			>
 				<PostHeader post={post} minHeight='60vh' />
 				<Container maxW='3xl'>
-					<ReactMarkdown rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={md} />
+					<ReactMarkdown
+						rehypePlugins={[rehypeRaw]}
+						remarkPlugins={[remarkGfm]}
+						components={ChakraUIRenderer()}
+						children={md}
+					/>
 				</Container>
 			</VStack>
 			<Box bg={isOpen ? commentColor : 'auto'} mt='2rem'>
