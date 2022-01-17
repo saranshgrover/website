@@ -24,7 +24,7 @@ export default function About({ md }: Props): ReactElement {
 					{/* {paragraphs.map((paragraph, key) => (
 						<Text fontSize='xl' key={key}>{paragraph}</Text>
 					))} */}
-					<Container maxW='xl'>
+					<Container maxW='xl' textAlign={'center'}>
 						<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
 					</Container>
 				</Flex>

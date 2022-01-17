@@ -1,7 +1,8 @@
+import { GA_TACKING_ID } from "./settings"
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
 	// @ts-ignore
-  window.gtag('config', 'UA-XXXXXXXXXX', {
+  window.gtag('config', GA_TACKING_ID, {
     page_path: url,
   })
 }

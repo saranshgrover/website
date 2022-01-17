@@ -47,7 +47,7 @@ export default function Header(): ReactElement {
 			pb='5rem'
 			w='100vw'
 			justify-content='center'
-			direction={{ lg: 'column', md: 'column' }}
+			direction={{ lg: 'row', md: 'column' }}
 		>
 			<Box left='0' w={{ base: '20%', md: '10%' }}>
 				<Link href='/'>
@@ -63,8 +63,8 @@ export default function Header(): ReactElement {
 				flexGrow={1}
 			>
 				<MenuItem href='/projects' title='Projects' />
+				<MenuItem href='/about' title='About' />
 				<MenuItem href='/blog' title='Blog' />
-				{/* <MenuItem href='/about' title='About' /> */}
 				<MenuItem href='https://srn.sh/resume' title='Resume' />
 				<IconButton
 					right={{ base: 'auto', md: '0' }}

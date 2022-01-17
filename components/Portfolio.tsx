@@ -38,7 +38,7 @@ const MotionIconButton = motion(IconButton)
 const MotionContainer = motion(Container)
 
 export function ProjectCover({ project, isEven }: { project: Project; isEven: boolean }): ReactElement {
-	const color = useColorModeValue('gray.200', 'gray.700')
+	const color = useColorModeValue('white', 'gray.700')
 	const iconColor = useColorModeValue('teal.600', 'teal.200')
 	const { colorMode } = useColorMode()
 	const controls = useAnimation()
@@ -61,7 +61,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 			scale: 1.2,
 		},
 		textHover: (i: boolean) => ({
-			x: i ? 300 : -300,
+			x: i ? 150 : -150,
 		}),
 	}
 	const variantsAfterMobile = React.useMemo(() => (isLargerThan480 ? variants : {}), [isLargerThan480])
