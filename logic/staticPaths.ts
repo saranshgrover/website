@@ -5,7 +5,7 @@ export function getPaths(dir: string, keepIndex=false) {
     let filenames = fs.readdirSync(dirPath)
     // let filenames =['a.ts']
     if(!keepIndex) {
-        filenames = filenames.filter(f => f !=='index.ts' && f!== 'index.js' && f !== 'markdown')
+        filenames = filenames.filter(f => f !=='index.ts' && f!== 'index.js' && f !== 'markdown' && f !== 'tools.js' && f !== 'tools.ts')
     }
     const paths = filenames.map(filename => (
         {
