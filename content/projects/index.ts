@@ -7,6 +7,7 @@ import politech from './politech'
 import pulze from './pulze'
 import wca_usability from './wca_usability'
 import type { Tag } from '../tags'
+import { IconType } from 'react-icons'
 
 
 export default {
@@ -24,6 +25,13 @@ export interface Project {
 	image: string
 	darkImage?: string
 	mdFile: string
+	featuredInfo?: FeaturedInfo[]
+}
+
+export interface FeaturedInfo {
+	title: string
+	content: string
+	icon?: IconType
 }
 
 

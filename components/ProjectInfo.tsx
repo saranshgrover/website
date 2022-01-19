@@ -11,6 +11,8 @@ import {
 	useColorMode,
 	useColorModeValue,
 	VStack,
+	Flex,
+	Icon,
 } from '@chakra-ui/react'
 import Tag from 'components/Tag'
 import { motion } from 'framer-motion'
@@ -32,6 +34,7 @@ const MotionButton = motion(Button)
 
 export default function ProjectInfo({ project, md }: Props): ReactElement {
 	const iconColor = useColorModeValue('teal.600', 'teal.200')
+	const borderColor = useColorModeValue('black', 'white')
 	const { colorMode } = useColorMode()
 	return (
 		<VStack
@@ -59,8 +62,8 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 					/>
 				)}
 			</Box>
-			<Container ml='auto' maxW='2xl' centerContent>
-				<Heading mb='2rem' size='2xl'>
+			<Container ml='auto' maxW='3xl' centerContent>
+				<Heading mb='2rem' size='2xl' textAlign={'center'}>
 					{project.name}
 				</Heading>
 				<Stack
@@ -108,8 +111,32 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 						)}
 					</Stack>
 				</Stack>
-
-				{project.demo && <Text fontSize='xl'>{project.description}</Text>}
+				{project.demo && (
+					<Text fontSize='xl' mb='2em'>
+						{project.description}
+					</Text>
+				)}
+				{project.featuredInfo && (
+					<Stack w='100vw' direction={{ base: 'column', md: 'row' }} spacing='1em' align='center'>
+						{project.featuredInfo.map((info, index) => (
+							<Stack
+								spacing='2em'
+								w='100%'
+								minH='20vh'
+								key={`${info.title}-${index}`}
+								borderRight={{ base: 'none', md: `1px solid ${borderColor}` }}
+								borderBottom={{ base: `1px solid ${borderColor}`, md: 'none' }}
+								pr='0.3em'
+							>
+								<Stack w='100%' justify='center' direction='row' align='center' spacing='0.5em'>
+									<Heading fontSize={'xl'}>{info.title}</Heading>
+									{info.icon && <Icon as={info.icon} boxSize={'20px'} />}
+								</Stack>
+								<Text textAlign={'center'}>{info.content}</Text>
+							</Stack>
+						))}
+					</Stack>
+				)}
 				<Divider />
 			</Container>
 			<Container maxW='3xl'>

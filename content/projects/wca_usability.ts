@@ -1,6 +1,7 @@
 
 import {Project} from './index'
 import {} from '../tags'
+import { createUxrFeaturedInfo } from './tools'
 
 const wca_usability:  Project = {
     id: 'wca_usability',
@@ -10,7 +11,8 @@ const wca_usability:  Project = {
     darkImage: '/images/projects/wca_usability_dark.png',
     isFeatured: true,
     tags: [],
-    mdFile: 'wca_usability.md'
+    mdFile: 'wca_usability.md',
+    featuredInfo: createUxrFeaturedInfo('Graduate Course/ World Cube Association', 'October - November 2021','UX researcher on a team of one','Heuristic evaluation, Remote Usability Testing','TryMyUI, Figma')
 
 }
 
