@@ -12,6 +12,10 @@ We consolidated the data into Contextual Design models (i.e., identity model, pe
 
 ![Mango Lakay Process](/images/projects/mango_lakay_process.png)
 
+## My Role
+
+I worked within a team of 5 other researchers and designers throughout this project. My primary roles was as an Analyst and was responsible for creating our interview protocol, conducting some of ther interviews, and synthesizing the qualitative data collected through interviews and interpretation sessions into Affinity Diagrams. Additionally, I collaborated in the creation of conceptual models as well as the client presentation.
+
 ## Research
 
 ### Affinity Diagram
