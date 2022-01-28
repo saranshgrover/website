@@ -1,7 +1,9 @@
 
 import {Project} from './index'
-import {} from '../tags'
+import { research } from '../tags'
 import { createUxrFeaturedInfo } from './tools'
+import usability_testing from 'content/tags/usability_testing'
+import heuristic_eval from 'content/tags/heuristic_eval'
 
 const wca_usability:  Project = {
     id: 'wca_usability',
@@ -10,7 +12,7 @@ const wca_usability:  Project = {
     image: '/images/projects/wca_usability.png',
     darkImage: '/images/projects/wca_usability_dark.png',
     isFeatured: true,
-    tags: [],
+    tags: [research, usability_testing, heuristic_eval],
     mdFile: 'wca_usability.md',
     featuredInfo: createUxrFeaturedInfo('Graduate Course/ World Cube Association', 'October - November 2021','UX researcher on a team of one','Heuristic evaluation, Remote Usability Testing','TryMyUI, Figma')
 

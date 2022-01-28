@@ -1,6 +1,7 @@
 
 import {Project} from './index'
-import {visualization,ui,research} from '../tags'
+import {visualization,ui} from '../tags'
+import { createUxrFeaturedInfo } from './tools'
 
 const century_events_dashboard:  Project = {
     id: 'century_events_dashboard',
@@ -9,8 +10,9 @@ const century_events_dashboard:  Project = {
     image: '/images/projects/century_events_dashboard.png',
     demo:'https://youtu.be/kCyf_TN-ID8',
     isFeatured: true,
-    tags: [visualization,ui,research],
+    tags: [visualization,ui],
     mdFile: 'century_events_dashboard.md',
+    featuredInfo: createUxrFeaturedInfo('Graduate Course in Visualization', 'January - April 2021', 'Lead Designer & Developer', 'User Flows, Mockups, Expert Reviews', 'Figma, React, D3')
 
 
 }

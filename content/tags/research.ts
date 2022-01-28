@@ -3,7 +3,7 @@ import {GiArchiveResearch} from 'react-icons/gi'
 
 const research: Tag = {
     id: 'research',
-    name: 'Research',
+    name: 'UX Research',
     icon: GiArchiveResearch,
     showIcon: false,
 	featured: false,
