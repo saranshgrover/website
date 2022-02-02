@@ -9,13 +9,14 @@ const theme = extendTheme({
         global: (props)  => ({
             body: {
                 overflowX: 'hidden',
-                bg: mode('white', '#141214')(props),
+                backgroundColor: mode('#b8c6db', '#16161d')(props),
+                backgroundImage: mode('linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);','linear-gradient(315deg, ##16161d 0%, #09203f 50%);')(props),
 
             },
             a: {
-                backgroundImage: mode('linear-gradient(10deg, #00cdcd 0%, #00cdcd 100%)',"linear-gradient(120deg, teal 0%, teal 100%)")(props),
+                backgroundImage: mode('linear-gradient(1deg, #00cdcd 0%, #00cdcd 100%)',"linear-gradient(120deg, teal 0%, teal 100%)")(props),
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '100% 0.2em',
+                backgroundSize: '100% 0.05em',
                 backgroundPosition: '0 88%',
                 transition: 'background-size 0.25s ease-in',
                 '&:hover': {
@@ -25,12 +26,12 @@ const theme = extendTheme({
         })
     },
     fontSizes: {
-        md: '20px',
+        md: '18px',
         lg: '20px'
     },
     config: {
         useSystemColorMode: false,
-        initialColorMode: 'light'
+        initialColorMode: 'dark'
     }
 })
 

@@ -26,13 +26,13 @@ export default function Intro({ md }: Props): ReactElement {
 			<ScaleBox delayOrder={0}>
 				<Flex
 					direction={['column-reverse', 'row']}
-					h='calc(100vh - 100px)'
+					// h='calc(100vh - 100px)'
 					justify='space-around'
 					align='center'
 					p='4'
 				>
-					<Stack direction={'column'} alignItems={'center'}>
-						<Heading align='center' size={'2xl'} letterSpacing={{ base: 'normal', md: '0.05em' }}>
+					<Stack direction={'column'} spacing='0.5em'>
+						<Heading size={'2xl'} letterSpacing={{ base: 'normal', md: '0.01em' }}>
 							{content.name.toLocaleUpperCase()}
 						</Heading>
 						<Stack
@@ -45,7 +45,7 @@ export default function Intro({ md }: Props): ReactElement {
 								direction={['column', 'row']}
 								spacing={{ base: '0.5em', md: '1em' }}
 								alignItems={'center'}
-								justify={'center'}
+								// justify={'center'}
 							>
 								{content.titles.map((title) => (
 									<Flex
@@ -60,16 +60,16 @@ export default function Intro({ md }: Props): ReactElement {
 										</Text>
 									</Flex>
 								))}
+								<Flex direction='row' align='center' justify='center'>
+									<Icon as={MdLocationOn} color={color} boxSize={8} pr={['0.2em', '0.5em']} />
+									<Text fontSize='xl' textDecoration='teal underline'>
+										{content.location}
+									</Text>
+								</Flex>
 							</Stack>
-							<Flex direction='row' align='center' justify='center'>
-								<Icon as={MdLocationOn} color={color} boxSize={8} pr={['0.2em', '0.5em']} />
-								<Text fontSize='xl' textDecoration='teal underline'>
-									{content.location}
-								</Text>
-							</Flex>
 						</Stack>
-						<Social />
 						<About md={md} />
+						<Social />
 					</Stack>
 					{showLargeImage ? (
 						<figure style={{ perspective: '1500px' }}>
@@ -100,7 +100,7 @@ export default function Intro({ md }: Props): ReactElement {
 const StyledImage = styled(Image)`
 	border-radius: 100px;
 	transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
-	box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.25);
+	box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.1);
 	transition: 0.3s;
 	&:hover {
 		transform: rotate(0);

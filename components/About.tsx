@@ -18,17 +18,12 @@ interface Props {
 export default function About({ md }: Props): ReactElement {
 	return (
 		<IntersectionObserver>
-			<ScaleBox delayOrder={0}>
-				<Flex direction='column' maxW='700px' justify='space-around' mt='4'>
-					<AnimatedDivider />
-					{/* {paragraphs.map((paragraph, key) => (
+			{/* {paragraphs.map((paragraph, key) => (
 						<Text fontSize='xl' key={key}>{paragraph}</Text>
 					))} */}
-					<Container maxW='xl' textAlign={'center'}>
-						<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
-					</Container>
-				</Flex>
-			</ScaleBox>
+			<Container maxW='xl' padding='0'>
+				<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
+			</Container>
 		</IntersectionObserver>
 	)
 }
