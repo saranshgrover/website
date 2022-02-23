@@ -18,18 +18,15 @@ I worked within a team of 5 other researchers and designers throughout this proj
 
 ## Research
 
-### Affinity Diagram
+### Data Synthesis
 
-After conducting 7 interviews with vendors and Mango Lakay members, we created two seperate affinity diagrams. We decided to create affinity diagrams as they helped us categorize the large amounts of qualitative interview data into a cohesive and structured story as well as helped us find shared goals and gaps between the stakeholders. It took a lot of critique and iterations before we were able to finish our affinity map. In the end, when if you follow the labels, it tells a story about the stakeholders in context with the Mango Lakay product.
+In order to synthensize and analyse all the qualitative data that was collected through interviews, we decided to follow the process of affinity mapping - a bottom up approach of organizing key details from interviews into structured categoies that reflect the common patterns expressed and experienced by users.
 
 ![Mango Lakay Process](/images/projects/mango_lakay_affinity.png) _Readable version can be found [here](https://go.umd.edu/AHP2)._
 
-Our Affinity Diagrams revealed that vendors and members of Mango Lakay have shared goals to:
+The affinity process revealed 4 key high-level findings that we emerged as patterns from the interviews. These findings reflected both the positive aspects of Mango Lakay's current platform as well as the pain points, and the common issues raised by vendors.
 
--   Be a part of the Haitian community and actively engage in Haitian events
--   Build their connections and network with vendors
--   Promote the welfare of people in Haiti
--   Create and access a niche Haitian user base
+![Mango Lakay Process](/images/projects/ml_affinity_finding.png)
 
 At the end of our Affinity Diagram process, we began working towards creating contextual models to represent our findings. Since we found common shared goals amongst vendors and Mango Lakay - we chose to identify the most common identities that represented a vendor on Mango Lakay. Then, we created a persona of a ficticious Mango Lakay vendor based on our findings. Finally, we created a journey map to represent the journey of this fictional vendor to identify low and high points in the journey
 
@@ -55,55 +52,32 @@ This is a step-by-step model showing what the user does at every part of the pro
 
 ## High Level Findings
 
-Through our data collection and analysis, we found three key findings
-
-1. **Mango Lakay works as an information retrieval platform but not an information-seeking platform.**
-2. **Mango Lakay’s online platform needs to provide opportunities for vendors to dynamically engage with customers**
-3. **Vendors want more control on Mango Lakay**
+Through our data collection and analysis, we found three key principles that were existing pain points for Mango Lakay. We decided to use these as the basis for our ideation process.
 
 ![Mango Lakay Findings](/images/projects/mango_lakay_findings.png)
 
 ## Hot Ideas & Visioning
 
-Once we had our key findings, we used these collectively as a team to brainstorm solutions to improve the Mango Lakay platofrm.
-As a team, we discussed the pros and cons of each solution discussed, and how one might be more effective than the other. These solutions are seen below:
+### How might we give vendors control to have direct communication and engagement with customers on the Mango Lakay online platform?
 
-1. Account system for customers
-    1. Enabling vendors to post updates
-    2. Ability to communicate directly with other vendors on the ML platform such as direct messaging
-2. Subscription feed for vendors and customers
-3. Notification system for customers and vendors
-4. Enable vendors to create and share events
-5. Ability to bookmark or subscribe to vendors
-6. Add commerce functionality
-7. Small biographies to engage customers and make vendors appear more inviting and personal
-8. Automated payment systems
-9. Monthly email blasts about featured vendors
-10. Display analytics for vendors to review, such as profile hits, redirects to vendor website,
-    time on profile
-11. Chat feature/ email form to ML
-12. Showcase value of subscription suggestion: Since many vendors have AHPmembership, they could get access to ML membership for some period of time
+Once we had our key findings, we used these collectively as a team to brainstorm solutions to improve the Mango Lakay platofrm.
+
+![Mango Lakay Products](/images/projects/ml_products.png)
 
 <br/>
 
-Keeping in mind constraints (cost, time, ease of development), we decided to flesh out and focus on creating product concepts for two of these solutions
-
-1. Subscription feed for vendors/customers (Solution 4)
-2. Enabling vendors to create and share events (Solution 5)
-
-## Product Concepts
+Keeping in mind constraints (cost, time, ease of development), we felt that the best value for investment, and the most effective solution was to creat a subscription feed for vendors and customers.
 
 ### Subscription Feed
 
 A way to encourage natural community interaction and organic growth. By implementing a subscription feed that allows vendors to push alerts, promotions, and events to customer subscribers, Mango Lakay will further bolster the feeling of community connection on the site. This will encourage customers to return to and interact with their favorite vendors thus leading to an increase in traffic on the vendor’s own website.
 
 ![Mango Lakay Subscription Feed](/images/projects/mango_lakay_feed.png)
-
-### Event Creation
-
-A way to encourage closer community interaction and collaboration. We found that events are extremely important in fostering a shared identity and bringing people together. Allowing vendors to create and share their events will encourage users to further explore the vendor’s products and marketplace. Shared events amongst multiple vendors would encourage collaboration and would allow for customers from one vendor to possibly purchase products from another by association.
-
-![Mango Lakay Subscription Feed](/images/projects/mango_lakay_events.png)
+<br/>
+![Mango Lakay Subscription Feed](/images/projects/ml_feed_1.png)
+![Mango Lakay Subscription Feed](/images/projects/ml_feed_2.png)
+![Mango Lakay Subscription Feed](/images/projects/ml_feed_4.png)
+![Mango Lakay Subscription Feed](/images/projects/ml_feed_3.png)
 
 ### Additional Artifacts
 
@@ -111,6 +85,6 @@ A way to encourage closer community interaction and collaboration. We found that
  padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
   <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEwaXbBKiQ&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    src="https://pitch.com/embed/bb7913b3-c3f4-4ce7-9419-6a47641d1f9a" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
 </div>
