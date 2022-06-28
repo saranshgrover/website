@@ -1,4 +1,4 @@
-Hey! I'm Saransh. I am a Graduate Student at University of Maryland's Human-Computer Interaction program where I spend my time researching problems and designing solutions for our modern media landscape.
+Hey! I'm Saransh. I am a Graduate Student at University of Maryland's Human-Computer Interaction program where I spend my time researching problems and designing solutions for our modern technology landscape. Currently, I'm a UX Design Intern at [Soliyarn](https://www.soliyarn.com) designing and developing interfaces for cutting edge smart garments of the future.
 
 At UMD, I'm a recent addition to the Computational Journalism Lab where I work on projects like analyzing misleading headlines
 for news articles, categorize COVID-19 fake cure headlines and explore how to visualize misinformation.
