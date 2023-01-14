@@ -34,7 +34,7 @@ const ${proj.id}:  Project = {
     tags: [${proj.tags.join(',')}],
     ${proj.demo && `demo: '${proj.demo}',`}
     ${proj.github && `github: '${proj.github}',`}
-    mdFile: '${proj.mdFile}'
+    mdFile: '${proj.mdFile}',
 
 }
 
@@ -74,8 +74,17 @@ export interface Project {
 	description: string
 	tags: Tag[]
 	image: string
+	darkImage?: string
 	mdFile: string
+	featuredInfo?: FeaturedInfo[]
 }
+
+export interface FeaturedInfo {
+	title: string
+	content: string
+	icon?: IconType
+}
+
 
 
 `

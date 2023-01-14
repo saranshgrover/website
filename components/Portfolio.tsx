@@ -1,6 +1,7 @@
 import { ExternalLinkIcon, InfoIcon } from '@chakra-ui/icons'
 import {
 	Box,
+	Center,
 	Container,
 	Flex,
 	Heading,
@@ -36,6 +37,80 @@ const MotionFlex = motion(Flex)
 const MotionIcon = motion(Icon)
 const MotionIconButton = motion(IconButton)
 const MotionContainer = motion(Container)
+
+export function ProjectCoverBasic({ project }: { project: Project }): ReactElement {
+	const iconColor = useColorModeValue('teal.600', 'teal.200')
+
+	return (
+		<Center w='100%' h='100%' borderRadius={'lg'}>
+			<Flex direction={'column'}>
+				<AnimatedDivider m={['0', '0 0 20px']}>
+					<Heading align='center' fontSize='clamp(24px, 5vw, 45px)'>
+						{project.name}
+					</Heading>
+				</AnimatedDivider>
+				<Text fontSize='sm' noOfLines={4} align='center' mb={{ base: '0.5em', md: '2em' }}>
+					{project.description}
+				</Text>
+				<Stack
+					direction={{ base: 'column', lg: 'column' }}
+					justify={{ base: 'center', lg: 'space-around' }}
+					align='center'
+					spacing='1em'
+				>
+					<Stack direction='row' spacing='0.5em' align='center'>
+						{project.tags.map((tag, index) => (
+							<>
+								{tag.showIcon ? (
+									<MotionIcon
+										key={index}
+										// @ts-ignore
+										as={tag.icon}
+										aria-label={tag.name}
+										color={iconColor}
+										size='1.5rem'
+									/>
+								) : (
+									<Tag key={index} colorScheme='teal'>
+										{tag.name}
+									</Tag>
+								)}
+							</>
+						))}
+					</Stack>
+					{(project.demo || project.github) && (
+						<Stack direction='row' align='center' spacing='0.5em'>
+							{project.demo && (
+								<Link href={project.demo}>
+									<MotionIconButton
+										icon={<ExternalLinkIcon />}
+										color={iconColor}
+										whileHover={{ scale: 1.2 }}
+										variant='link'
+										aria-label='demo'
+										fontSize={{ base: '1rem', lg: '1.5rem' }}
+									/>
+								</Link>
+							)}
+							{project.github && (
+								<Link href={project.github}>
+									<MotionIconButton
+										icon={<RiGithubFill />}
+										color={iconColor}
+										whileHover={{ scale: 1.2 }}
+										variant='link'
+										fontSize={{ base: '1rem', lg: '1.5rem' }}
+										aria-label='github'
+									/>
+								</Link>
+							)}
+						</Stack>
+					)}
+				</Stack>
+			</Flex>
+		</Center>
+	)
+}
 
 export function ProjectCover({ project, isEven }: { project: Project; isEven: boolean }): ReactElement {
 	const color = useColorModeValue('white', 'gray.700')
