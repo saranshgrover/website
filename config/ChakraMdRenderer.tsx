@@ -152,6 +152,7 @@ export const defaults: Defaults = {
 		return (
 			<Element fontSize='md' spacing={2} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} {...attrs}>
 				{children}
+				<br />
 			</Element>
 		)
 	},
