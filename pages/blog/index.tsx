@@ -4,8 +4,23 @@ import TagSelector from 'components/TagSelector'
 import { useRouter } from 'next/router'
 import * as contentTags from 'content/tags'
 import type { Tag as TagType } from 'content/tags'
+import { GetStaticProps } from 'next'
 
-export default function index(): ReactElement {
+interface Props {
+	articles: {
+		author: string
+		categories: string[]
+		content: string
+		description: string
+		link: string
+		pubDate: string
+		thumbnail: string
+		title: string
+	}[]
+	tags: string[]
+}
+
+export default function index({ articles, tags: mediumTags }: Props): ReactElement {
 	const router = useRouter()
 	const tags = router.query.tags as string | undefined
 	const allTags = React.useMemo(() => {
@@ -25,7 +40,26 @@ export default function index(): ReactElement {
 	return (
 		<>
 			<TagSelector all={allTags} tags={selectedTags} setTags={setTags} />
-			<BlogList selectedTags={selectedTags} />
+			<BlogList selectedTags={selectedTags} mediumTags={mediumTags} mediumArticles={articles} />
 		</>
 	)
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+	const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@sgrover3')
+	const data = await response.json()
+	const tags: {
+		[key: string]: boolean
+	} = {}
+	for (const item of data.items) {
+		for (const category of item.categories) {
+			if (!tags[category]) tags[category] = true
+		}
+	}
+	return {
+		props: {
+			articles: data.items,
+			tags: Object.keys(tags),
+		},
+	}
 }

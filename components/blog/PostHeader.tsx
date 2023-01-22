@@ -23,13 +23,13 @@ export default function PostHeader({ post, linkButton = false, minHeight = '50vh
 	return (
 		<Box pos='relative' minW='100vw' minH={minHeight}>
 			<Image src={post.image} layout='fill' objectFit='cover' />
-			<Container ml='auto' maxW='2xl' centerContent minH={minHeight}>
+			<Container ml='auto' maxW='7xl' centerContent minH={minHeight}>
 				<Flex minH={minHeight} direction='column' justify='center' alignContent='center' alignItems='center'>
 					<Heading textAlign='center' h='100%' size='4xl' zIndex={2} letterSpacing={4} mb='2rem'>
 						{post.title}
 					</Heading>
 					<Text color={description} zIndex={2} fontSize='xl' mb='2rem'>
-						{`Posted by ${intro.name} on ${post.date}`}{' '}
+						{`Posted by ${intro.name} on ${new Date(post.date).toLocaleDateString()}`}{' '}
 					</Text>
 					<Stack
 						direction={{ base: 'column' }}
@@ -57,9 +57,9 @@ export default function PostHeader({ post, linkButton = false, minHeight = '50vh
 						{post.description}
 					</Text>
 					{linkButton && (
-						<NextLink href={`/blog/${post.id}`}>
+						<NextLink href={post.mdFile == 'medium' ? post.id : `/blog/${post.id}`}>
 							<Button zIndex={2} colorScheme='teal' variant='outline' borderRadius='full' minW='20vw'>
-								{`Read Post & Comment`}
+								{`Read ${post.mdFile === 'medium' ? 'on Medium' : 'Post'} & Comment`}
 							</Button>
 						</NextLink>
 					)}
