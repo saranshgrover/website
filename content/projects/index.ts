@@ -25,6 +25,7 @@ export interface Project {
 	darkImage?: string
 	mdFile: string
 	featuredInfo?: FeaturedInfo[]
+	passwordProtect?: boolean
 }
 
 export interface FeaturedInfo {

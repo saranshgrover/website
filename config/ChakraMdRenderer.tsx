@@ -18,6 +18,8 @@ import {
 	Tr,
 	Th,
 	Td,
+	useColorMode,
+	Box,
 } from '@chakra-ui/react'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import deepmerge from 'deepmerge'
@@ -67,7 +69,7 @@ export const defaults: Defaults = {
 	p: (props) => {
 		const { children } = props
 		return (
-			<Text fontSize='md' mb={10}>
+			<Text fontSize='18px' mb={10}>
 				{children}
 			</Text>
 		)
@@ -83,9 +85,17 @@ export const defaults: Defaults = {
 	blockquote: (props) => {
 		const { children } = props
 		return (
-			<Code as='blockquote' p={2}>
+			<Box
+				as='span'
+				letterSpacing={'wide'}
+				lineHeight='140%'
+				color={'teal'}
+				as='blockquote'
+				pl={5}
+				borderLeft='2px solid teal'
+			>
 				{children}
-			</Code>
+			</Box>
 		)
 	},
 	code: (props) => {
@@ -106,7 +116,10 @@ export const defaults: Defaults = {
 		)
 	},
 	hr: (props) => {
-		return <Divider />
+		const { colorMode } = useColorMode()
+		console.log(colorMode)
+		console.log('hi')
+		return <Divider borderColor={colorMode === 'dark' ? 'whiteAlpha.600' : 'blackAlpha.600'} />
 	},
 	a: Link,
 	img: (props) => {
@@ -127,14 +140,26 @@ export const defaults: Defaults = {
 						</Modal>
 					)}
 				</ModalGateway>
-				<Image cursor='pointer' onClick={openLightbox} {...props} />
+				<Image
+					// left={'50%'}
+					// marginLeft='-50vw'
+					// marginRight='-50vw'
+					// maxWidth={'100vw'}
+					// position='relative'
+					// right='50%'
+					// width='100vw'
+					mb='0.3em'
+					cursor='pointer'
+					onClick={openLightbox}
+					{...props}
+				/>
 			</>
 		)
 	},
 	text: (props) => {
 		const { children } = props
 		return (
-			<Text fontSize='md' mb={10}>
+			<Text fontSize='18px' mb={10}>
 				{children}
 			</Text>
 		)
@@ -193,7 +218,14 @@ export const defaults: Defaults = {
 		const { level, children } = props
 		const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
 		return (
-			<Heading mt={4} mb={12} as={`h${level}`} size={sizes[`${level - 1}`]} {...getCoreProps(props)}>
+			<Heading
+				fontWeight={'normal'}
+				mt={4}
+				mb={8}
+				as={`h${level}`}
+				size={sizes[`${level - 1}`]}
+				{...getCoreProps(props)}
+			>
 				{children}
 			</Heading>
 		)

@@ -8,6 +8,7 @@ import { GetStaticProps } from 'next'
 import { getMdFor } from '../../logic/markdown'
 import Head from '../../components/head'
 import { getPaths } from '../../logic/staticPaths'
+import PasswordProtect from 'components/PasswordProtect'
 
 interface Props {
 	md: string
@@ -19,10 +20,12 @@ export default function index({ md }: Props): ReactElement {
 	const project = React.useMemo(() => {
 		return content.projects.find((project) => project.id === id)
 	}, [id])
+	const [isVerified, setIsVerified] = React.useState(!Boolean(project?.passwordProtect))
 	if (!project) return <></>
 	return (
 		<>
 			<Head title={`${project.name} - Saransh Grover`} description={project.description} image={project.image} />
+			{!isVerified && <PasswordProtect onVerify={() => setIsVerified(true)} />}
 			<IntersectionObserver>
 				<ScaleBox delayOrder={0}>
 					<ProjectInfo project={project} md={md} />

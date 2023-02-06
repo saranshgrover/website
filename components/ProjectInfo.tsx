@@ -117,12 +117,12 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 					</Text>
 				)}
 				{project.featuredInfo && (
-					<Stack w='100vw' direction={{ base: 'column', md: 'row' }} spacing='1em' align='center'>
+					<Stack w='80vw' direction={{ base: 'column', md: 'row' }} spacing='1em' align='center'>
 						{project.featuredInfo.map((info, index) => (
 							<Stack
 								spacing='2em'
 								w='100%'
-								minH='20vh'
+								minH={{ base: '20px', md: '20vh' }}
 								key={`${info.title}-${index}`}
 								borderRight={{ base: 'none', md: `1px solid ${borderColor}` }}
 								borderBottom={{ base: `1px solid ${borderColor}`, md: 'none' }}
@@ -139,7 +139,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 				)}
 				<Divider />
 			</Container>
-			<Container maxW='3xl'>
+			<Container maxW={{ base: '3xl', lg: '4xl' }}>
 				<ReactMarkdown
 					rehypePlugins={[rehypeRaw]}
 					remarkPlugins={[remarkGfm]}
