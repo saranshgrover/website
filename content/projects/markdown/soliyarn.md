@@ -89,6 +89,11 @@ The second workflow was what we called the **Device Visualization Interface**, w
 
 I also worked to **further develop the visualizations** of the products. For this, I had to work closely with systems and software engineers to understand the capabilities and limitations of the products. **I re-developed the visualization** using a 3-D modelling libary called [Three.js](https://threejs.org/), [D3.js](https://d3js.org/) and the Web Canvas API to ensure the visualizations were capable to work with the prototypes created while keeping in mind the limitations of the product.
 
+<video  controls autoplay>
+  <source src="/images/projects/soliyarn-viz.mp4" type="video/mp4">
+</video>
+<span style="text-align:center;font-size:0.875rem;display:block">3D Visualization example</span>
+
 ### Impact
 
 -   In my 3 months at Soliyarn, I was a key part of the **team behind fully shipping the web portal**. Not only did we achieve our timeline, we also delivered more features than promised.
