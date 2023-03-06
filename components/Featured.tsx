@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import content, { Project } from '../content/projects'
-import { Box, Heading, Image, Text, Grid, useColorMode, Center } from '@chakra-ui/react'
+import { Box, Heading, Image, Text, Grid, useColorMode, Center, Skeleton } from '@chakra-ui/react'
 import { ProjectCover, ProjectCoverBasic } from './Portfolio'
 import AnimatedDivider from './AnimatedDivider'
 import Link from 'next/link'
@@ -48,6 +48,7 @@ const MyCard = ({ project }: MyCardProps) => {
 				onMouseLeave={() => setHover(false)}
 			>
 				<Image
+					fallback={<Skeleton height={'30vh'} />}
 					src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
 					opacity={hover ? 0.5 : 1}
 					alt={project.name}
