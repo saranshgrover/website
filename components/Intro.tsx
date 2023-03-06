@@ -41,12 +41,7 @@ export default function Intro({ md }: Props): ReactElement {
 							pt={{ base: '2em' }}
 							pb={{ base: '2em' }}
 						>
-							<Stack
-								direction={['column', 'row']}
-								spacing={{ base: '0.5em', md: '1em' }}
-								alignItems={'center'}
-								// justify={'center'}
-							>
+							<Stack direction={['column', 'row']} spacing={{ base: '1em', md: '1em' }}>
 								{content.titles.map((title) => (
 									<Flex
 										key={title}
@@ -60,7 +55,7 @@ export default function Intro({ md }: Props): ReactElement {
 										</Text>
 									</Flex>
 								))}
-								<Flex direction='row' align='center' justify='center'>
+								<Flex direction='row' align='center' justify='flex-start'>
 									<Icon as={MdLocationOn} color={color} boxSize={8} pr={['0.2em', '0.5em']} />
 									<Text fontSize='xl' textDecoration='teal underline'>
 										{content.location}

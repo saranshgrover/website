@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import content, { Project } from '../content/projects'
-import { Box, Heading, Image, Text, Grid, useColorMode } from '@chakra-ui/react'
+import { Box, Heading, Image, Text, Grid, useColorMode, Center } from '@chakra-ui/react'
 import { ProjectCover, ProjectCoverBasic } from './Portfolio'
 import AnimatedDivider from './AnimatedDivider'
 import Link from 'next/link'
@@ -17,13 +17,13 @@ export default function Featured(): ReactElement {
 				</Heading>
 			</AnimatedDivider>
 
-			<Box my='1em' mx={['0.5em', null, '6em']}>
-				<Grid templateColumns='repeat(auto-fill, minmax(500px, 1fr));' gap={6}>
+			<Center my='1em' mx={['0.5em', null, '6em']}>
+				<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr' }} gap={6}>
 					{featured.map((project, index) => (
 						<MyCard project={project} />
 					))}
 				</Grid>
-			</Box>
+			</Center>
 		</Box>
 	)
 }
@@ -41,6 +41,7 @@ const MyCard = ({ project }: MyCardProps) => {
 				as='button'
 				position='relative'
 				width='100%'
+				maxW={'80vw'}
 				height='100%'
 				// maxH='50vh'
 				onMouseEnter={() => setHover(true)}
