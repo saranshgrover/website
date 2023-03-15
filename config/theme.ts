@@ -42,7 +42,7 @@ const theme = extendTheme({
 	},
 	config: {
 		useSystemColorMode: false,
-		initialColorMode: 'dark',
+		initialColorMode: 'light',
 	},
 })
 
