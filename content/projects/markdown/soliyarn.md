@@ -4,7 +4,11 @@
 
 ## Project Overview
 
-Soliyarn is an e-textile startup creating sensor-based garments for military, industrial and personal use. As a Product Design Intern at Soliyarn, I was part of the team that **designed a web portal** to let users connect to their Soliyarn garments and visualize the data collected in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
+Soliyarn is a smart wearables startup creating sensor-based wearables for military, healthcare and personal use.
+
+As a Product Designdf at Soliyarn, I was part of the team that **designed a web portal** to connect to sensor-based garments and visualize data in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
+
+This was a cross-Functional Project done over 14 weeks. The team included 2 Product Designers, 2 Developers, 1 Manager and other cross-functional collaborators.
 
 While smart, sensor equipped garments are growing in popularity, not many interfaces have been created that allow different clients to connect to their garments and see data through real-time visualizations relevant to their needs.
 
@@ -73,23 +77,37 @@ We created two different wireframes that we did <u>**A/B testing**</u> on with a
 
 After analyzing user insights, creating a task flow and testing wireframes with a small set of clients, we did 2 design sprints to create our final prototypes that were used for development. I was responsible for working on two main flows - the device configruation and the visualization interface.
 
+These designs were prototyped in Figma and the animations were created using Framer.
+
 #### Flow 1: Device Configuration
 
 The first prototype I developed was the flow for configuration of a new device. This included users initially connecting their device via bluetooth, downloading and updating any necessary software, and customizing specific details like name, icon and other variables like refresh rate.
 
+##### Design & Steps
+
 ![Prototypes of the configuration flow](/images/projects/soliyarn-configuration-flow.png)
 
-#### Flow 2: Visualization Interface
+##### Prototype & Animation
 
-The second workflow was what we called the **Device Visualization Interface**, which was the interface where customers could connect to their garment and be able to visualize the real-time data collection through different visualizations based on the kind of garment. This involved creating 3-D real-time visual
+<video autoplay loop muted controls webkit-playsinline playsinline >
+  <source src="/images/projects/soliyarn-final-flow.mp4" type="video/mp4">
+</video>
+<span style="text-align:center;font-size:0.875rem;display:block">3-step process for Device Configuration</span>
 
-> Design sharing restricted due to NDA - please [contact me](mailto:contact@saranshgrover.com)
+#### Flow 2: Managing Device & User Access
+
+The second workflow was what about allowing supervisors and clients be able to manage access to their devices amongst their organizations and locations. Examples of such locations included hospitals with various rooms, or a company with multiple offices. This included creating new users, assigning them to locations and devices, and managing their access.
+
+<video autoplay loop muted controls webkit-playsinline playsinline >
+  <source src="/images/projects/soliyarn-access.mp4" type="video/mp4">
+</video>
+<span style="text-align:center;font-size:0.875rem;display:block">Prototype for Managing Device & User Access</span>
 
 #### Visualization Development
 
 I also worked to **further develop the visualizations** of the products. For this, I had to work closely with systems and software engineers to understand the capabilities and limitations of the products. **I re-developed the visualization** using a 3-D modelling libary called [Three.js](https://threejs.org/), [D3.js](https://d3js.org/) and the Web Canvas API to ensure the visualizations were capable to work with the prototypes created while keeping in mind the limitations of the product.
 
-<video  controls >
+<video autoplay loop muted controls webkit-playsinline playsinline >
   <source src="/images/projects/soliyarn-viz.mp4" type="video/mp4">
 </video>
 <span style="text-align:center;font-size:0.875rem;display:block">3D Visualization example</span>
