@@ -6,9 +6,9 @@
 
 Soliyarn is a smart wearables startup creating sensor-based wearables for military, healthcare and personal use.
 
-As a Product Designdf at Soliyarn, I was part of the team that **designed a web portal** to connect to sensor-based garments and visualize data in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
+As a Product Designer at Soliyarn, I was part of the team that **designed a web portal** to connect to sensor-based garments and visualize data in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
 
-This was a cross-Functional Project done over 14 weeks. The team included 2 Product Designers, 2 Developers, 1 Manager and other cross-functional collaborators.
+This was a cross-functional Project done over 14 weeks. The team included 2 Product Designers, 2 Developers, 1 Manager and other cross-functional collaborators.
 
 While smart, sensor equipped garments are growing in popularity, not many interfaces have been created that allow different clients to connect to their garments and see data through real-time visualizations relevant to their needs.
 
