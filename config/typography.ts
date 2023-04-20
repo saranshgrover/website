@@ -22,8 +22,18 @@ export default {
 			lineHeight: '110%',
 			letterSpacing: '-1%',
 		},
+		h4: {
+			fontSize: '25px',
+			fontWeight: 'bold',
+			lineHeight: '110%',
+			letterSpacing: '-1%',
+		},
 		paragraph: {
-			fontSize: ['20px', '18px'],
+			fontSize: {
+				base: '18px',
+				lg: '18px',
+				'2xl': '22px',
+			},
 		},
 		li: {
 			fontSize: '18px',

@@ -25,7 +25,7 @@ export default function AboutMe({ md }: Props): ReactElement {
 	return (
 		<Flex direction={['column', 'row']} justify='space-around' align='center' p='4'>
 			<Stack direction={'column'}>
-				<Container maxW='xl'>
+				<Container maxW={{ base: 'xl', xl: '3xl' }}>
 					<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
 				</Container>
 				<Social />

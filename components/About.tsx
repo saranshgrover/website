@@ -21,7 +21,7 @@ export default function About({ md }: Props): ReactElement {
 			{/* {paragraphs.map((paragraph, key) => (
 						<Text fontSize='xl' key={key}>{paragraph}</Text>
 					))} */}
-			<Container maxW='xl' padding='0'>
+			<Container maxW={{ base: 'xl', '2xl': '5xl' }} padding='0'>
 				<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
 			</Container>
 		</IntersectionObserver>

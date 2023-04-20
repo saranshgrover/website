@@ -20,6 +20,7 @@ import {
 	Td,
 	useColorMode,
 	Box,
+	useColorModeValue,
 } from '@chakra-ui/react'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import deepmerge from 'deepmerge'
@@ -69,7 +70,7 @@ export const defaults: Defaults = {
 	p: (props) => {
 		const { children } = props
 		return (
-			<Text fontSize='18px' mb={10}>
+			<Text textStyle='paragraph' mb={10}>
 				{children}
 			</Text>
 		)
@@ -84,12 +85,13 @@ export const defaults: Defaults = {
 	},
 	blockquote: (props) => {
 		const { children } = props
+		const color = useColorModeValue('teal', 'teal.200')
 		return (
 			<Box
 				as='span'
 				letterSpacing={'wide'}
 				lineHeight='140%'
-				color={'teal'}
+				color={color}
 				as='blockquote'
 				pl={5}
 				borderLeft='2px solid teal'
@@ -117,8 +119,6 @@ export const defaults: Defaults = {
 	},
 	hr: (props) => {
 		const { colorMode } = useColorMode()
-		console.log(colorMode)
-		console.log('hi')
 		return <Divider borderColor={colorMode === 'dark' ? 'whiteAlpha.600' : 'blackAlpha.600'} />
 	},
 	a: Link,
@@ -159,7 +159,7 @@ export const defaults: Defaults = {
 	text: (props) => {
 		const { children } = props
 		return (
-			<Text fontSize='18px' mb={10}>
+			<Text textStyle={'paragraph'} mb={10}>
 				{children}
 			</Text>
 		)
@@ -192,7 +192,14 @@ export const defaults: Defaults = {
 		}
 		if (depth === 1) styleType = 'circle'
 		return (
-			<Element spacing={2} as={ordered ? 'ol' : 'ul'} styleType={styleType} pl={4} {...attrs}>
+			<Element
+				spacing={2}
+				as={ordered ? 'ol' : 'ul'}
+				styleType={styleType}
+				pl={4}
+				textStyle={'paragraph'}
+				{...attrs}
+			>
 				{children}
 			</Element>
 		)
@@ -208,7 +215,11 @@ export const defaults: Defaults = {
 			)
 		}
 		return (
-			<ListItem {...getCoreProps(props)} listStyleType={checked !== null ? 'none' : 'inherit'}>
+			<ListItem
+				{...getCoreProps(props)}
+				listStyleType={checked !== null ? 'none' : 'inherit'}
+				textStyle={'paragraph'}
+			>
 				{/* <ListIcon as={AiOutlineArrowRight} color='primary' /> */}
 				{checkbox || children}
 			</ListItem>
@@ -219,7 +230,7 @@ export const defaults: Defaults = {
 		const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
 		return (
 			<Heading
-				fontWeight={'normal'}
+				fontWeight={'light'}
 				mt={4}
 				mb={8}
 				as={`h${level}`}

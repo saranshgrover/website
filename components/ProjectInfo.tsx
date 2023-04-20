@@ -139,7 +139,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 				)}
 				<Divider />
 			</Container>
-			<Container maxW={{ base: '3xl', lg: '4xl' }}>
+			<Container maxW={{ base: '3xl', lg: '4xl', '2xl': '4xl' }}>
 				<ReactMarkdown
 					rehypePlugins={[rehypeRaw]}
 					remarkPlugins={[remarkGfm]}

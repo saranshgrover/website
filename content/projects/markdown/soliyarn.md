@@ -4,17 +4,13 @@
 
 ## Project Overview
 
-Soliyarn is a smart wearables startup creating sensor-based wearables for military, healthcare and personal use.
-
-As a Product Designer at Soliyarn, I was part of the team that **designed a web portal** to connect to sensor-based garments and visualize data in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
-
-This was a cross-functional Project done over 14 weeks. The team included 2 Product Designers, 2 Developers, 1 Manager and other cross-functional collaborators.
+Soliyarn is a smart wearables startup creating sensor-based wearables for military, healthcare and personal use. As a Product Designer at Soliyarn, I was part of the team that **designed a web portal** to connect to sensor-based garments and visualize data in real-time. **I defined user task flows, created wireframes, prototypes and mocks for the pages, and worked to improve the visualizations of the products through 3D design and development**
 
 While smart, sensor equipped garments are growing in popularity, not many interfaces have been created that allow different clients to connect to their garments and see data through real-time visualizations relevant to their needs.
 
 In addition, Soliyarn has a line of products that aim to be created for both business use, as well as personal use. Thus, any interface must be <u>**adaptable**</u> and <u>**error-free**</u> to allow for commercial and personal use.
 
-> #### The goal for this project was to create a coherent and modular infrastructure and interface that lets Soliyarn's varied clients easily access and interact with their biosensing garments and visualizations.
+> ### The goal for this project was to create a coherent and modular infrastructure and interface that lets Soliyarn's varied clients easily access and interact with their biosensing garments and visualizations.
 
 ### What was the problem?
 
@@ -40,7 +36,7 @@ We created a list of ‘How Might We…’ questions to help us better align our
 
 I conducted interpretation sessions with the business leaders and researchers who communicate with clients to identify what were the most important features needed in the platform and to identify any important design guidelines and limitations that clients may have.
 
-> #### We need a coherent interface that let all our easily access and interact with their biosensing garments and visualizations in one place
+> ### We need a coherent interface that let all our easily access and interact with their biosensing garments and visualizations in one place
 
 Some key takeaways from these sessions were:
 
@@ -53,7 +49,10 @@ Some key takeaways from these sessions were:
 Before designing prototypes, we wanted to define the structure of the portal after receiving the development specifications. For this, we worked closely with engineers, designers and stakeholders to <u>create a complete task flow for the portal.</u> Creating this flow helped us document and understand key tasks for the portal and have a unified point of reference for design and development.
 
 ![Image showing the User Flow Chart](/images/projects/soliyarn-user-flow.png)
-<span style="text-align:center;font-size:0.875rem;display:block">The final user flow chart for the web portal including screens and the tasks between screens</span>
+
+<div style="width:100%;display:flex;align-items:center;flex-direction:column">
+<p style="text-align:center;font-size:1rem;display:block">The final user flow chart for the web portal including screens and the tasks between screens</p>
+</div>
 
 #### **A/B Testing Two Wireframes**
 
@@ -62,16 +61,14 @@ We created two different wireframes that we did <u>**A/B testing**</u> on with a
 <div style="margin-bottom:1rem;display:flex">
 	<div style='float:left;width:50%;padding-right:1em;display:flex;align-items:center;flex-direction:column;align-content:center'>
 		<img src='/images/projects/wireframe-1.gif' alt='Demo of first wireframe'>
-		<span style="text-align:center;font-size:0.875rem;display:block">Side Based Navigation Wireframe</span>
+		<p style="text-align:center;font-size:1rem;display:block">Side Based Navigation Wireframe</p>
 	</div>
 <div style='float:left;width:50%;padding-left:1em;display:flex;align-items:center;flex-direction:column;align-content:center'>
 		<img src='/images/projects/wireframe-2.gif' alt='Demo of second wireframe'>
-		<span style="text-align:center;font-size:0.875rem;display:block">
-		Top Based Navigation Wireframe</span>
+		<p style="text-align:center;display:block;margin-top:1rem;">
+		Top Based Navigation Wireframe</p>
 	</div>
 </div>
-
-####
 
 ### High Fidelity Prototypes
 
@@ -79,38 +76,44 @@ After analyzing user insights, creating a task flow and testing wireframes with 
 
 These designs were prototyped in Figma and the animations were created using Framer.
 
-#### Flow 1: Device Configuration
+#### **Flow 1: Device Configuration**
 
 The first prototype I developed was the flow for configuration of a new device. This included users initially connecting their device via bluetooth, downloading and updating any necessary software, and customizing specific details like name, icon and other variables like refresh rate.
 
-##### Design & Steps
+#### Design & Steps
 
 ![Prototypes of the configuration flow](/images/projects/soliyarn-configuration-flow.png)
 
-##### Prototype & Animation
+#### Prototype & Animation
 
+<div style="width:100%;display:flex;align-items:center;flex-direction:column">
 <video autoplay loop muted controls webkit-playsinline playsinline >
   <source src="/images/projects/soliyarn-final-flow.mp4" type="video/mp4">
 </video>
-<span style="text-align:center;font-size:0.875rem;display:block">3-step process for Device Configuration</span>
+<p style="text-align:center;display:block;margin-top:1rem;">3-step process for Device Configuration</p>
+</div>
 
-#### Flow 2: Managing Device & User Access
+#### **Flow 2: Managing Device & User Access**
 
 The second workflow was what about allowing supervisors and clients be able to manage access to their devices amongst their organizations and locations. Examples of such locations included hospitals with various rooms, or a company with multiple offices. This included creating new users, assigning them to locations and devices, and managing their access.
 
+<div style="width:100%;display:flex;align-items:center;flex-direction:column">
 <video autoplay loop muted controls webkit-playsinline playsinline >
   <source src="/images/projects/soliyarn-access.mp4" type="video/mp4">
 </video>
-<span style="text-align:center;font-size:0.875rem;display:block">Prototype for Managing Device & User Access</span>
+<p style="text-align:center;display:block">Prototype for Managing Device & User Access</p>
+</div>
 
 #### Visualization Development
 
 I also worked to **further develop the visualizations** of the products. For this, I had to work closely with systems and software engineers to understand the capabilities and limitations of the products. **I re-developed the visualization** using a 3-D modelling libary called [Three.js](https://threejs.org/), [D3.js](https://d3js.org/) and the Web Canvas API to ensure the visualizations were capable to work with the prototypes created while keeping in mind the limitations of the product.
 
+<div style="width:100%;display:flex;align-items:center;flex-direction:column">
 <video autoplay loop muted controls webkit-playsinline playsinline >
   <source src="/images/projects/soliyarn-viz.mp4" type="video/mp4">
 </video>
-<span style="text-align:center;font-size:0.875rem;display:block">3D Visualization example</span>
+<p style="text-align:center;display:block">3D Visualization example</p>
+</div>
 
 ### Impact
 
