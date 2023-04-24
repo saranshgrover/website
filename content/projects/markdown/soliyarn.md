@@ -10,7 +10,7 @@ While smart, sensor equipped garments are growing in popularity, not many interf
 
 In addition, Soliyarn has a line of products that aim to be created for both business use, as well as personal use. Thus, any interface must be <u>**adaptable**</u> and <u>**error-free**</u> to allow for commercial and personal use.
 
-> ### The goal for this project was to create a coherent and modular infrastructure and interface that lets Soliyarn's varied clients easily access and interact with their biosensing garments and visualizations.
+> #### The goal for this project was to create a coherent and modular infrastructure and interface that lets Soliyarn's varied clients easily access and interact with their biosensing garments and visualizations.
 
 ### What was the problem?
 
@@ -19,8 +19,12 @@ Soliyarn's had **no centralized** platform to host real-time data and visualizat
 ### Why was it important?
 
 As Soliyarn was growing, it was acquiring more clients and customers thereby increasing the types of products being created. A disjointed interface for each product and client was **hard to scale**.
-
-![Why this problem was important: No centralized software infrastructure leading to Software Scalability,Not commercial ready - Demos were "academic" in nature leading to Product value through UX, No user or product management system leading to Commercial Scalability, Unclear method of connection between device and software leading to Renders product unusable and unintuitive, Limited visualization capabilities and user experience leading to Product Value through UX](/images/projects/soliyarn-importance.png)
+| Existing Problem| <!-- --> | Importance |
+| ---------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------- |
+| _No centralized software infrastructure_ | <img src='/images/projects/arrow-right.png' style='max-width:2.5rem'> | **Software Scalability** |
+| _Not commercial ready - Demos were "academic" in nature_ | <img src='/images/projects/arrow-right.png' style='max-width:2.5rem'> | **Product value through UX** |
+| _No user or product management system_ | <img src='/images/projects/arrow-right.png' style='max-width:2.5rem'> | **Commercial Scalability** |
+| _Unclear method of connection between device and software_ | <img src='/images/projects/arrow-right.png' style='max-width:2.5rem'> | **Renders product unusable and unintuitive** |
 
 ### Starting with Questions...
 
@@ -36,7 +40,7 @@ We created a list of ‘How Might We…’ questions to help us better align our
 
 I conducted interpretation sessions with the business leaders and researchers who communicate with clients to identify what were the most important features needed in the platform and to identify any important design guidelines and limitations that clients may have.
 
-> ### We need a coherent interface that let all our easily access and interact with their biosensing garments and visualizations in one place
+> #### We need a coherent interface that let all our easily access and interact with their biosensing garments and visualizations in one place
 
 Some key takeaways from these sessions were:
 
@@ -48,9 +52,8 @@ Some key takeaways from these sessions were:
 
 Before designing prototypes, we wanted to define the structure of the portal after receiving the development specifications. For this, we worked closely with engineers, designers and stakeholders to <u>create a complete task flow for the portal.</u> Creating this flow helped us document and understand key tasks for the portal and have a unified point of reference for design and development.
 
-![Image showing the User Flow Chart](/images/projects/soliyarn-user-flow.png)
-
 <div style="width:100%;display:flex;align-items:center;flex-direction:column">
+<img src='/images/projects/soliyarn-user-flow.png' alt='Image showing the User Flow Chart'>
 <p style="text-align:center;font-size:1rem;display:block">The final user flow chart for the web portal including screens and the tasks between screens</p>
 </div>
 
@@ -95,7 +98,7 @@ The first prototype I developed was the flow for configuration of a new device. 
 
 #### **Flow 2: Managing Device & User Access**
 
-The second workflow was what about allowing supervisors and clients be able to manage access to their devices amongst their organizations and locations. Examples of such locations included hospitals with various rooms, or a company with multiple offices. This included creating new users, assigning them to locations and devices, and managing their access.
+The second workflow was all about allowing supervisors and clients be able to manage access to their devices amongst their organizations and locations. Examples of such locations included hospitals with various rooms, or a company with multiple offices. This included creating new users, assigning them to locations and devices, and managing their access.
 
 <div style="width:100%;display:flex;align-items:center;flex-direction:column">
 <video autoplay loop muted controls webkit-playsinline playsinline >

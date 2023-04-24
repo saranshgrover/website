@@ -33,7 +33,25 @@ const theme = extendTheme({
 				textUnderlineOffset: '0.3em',
 			},
 			li: {
-				fontSize: '18px',
+				fontSize: {
+					base: '18px',
+					lg: '18px',
+					'2xl': '22px',
+				},
+			},
+			td: {
+				fontSize: {
+					base: '18px',
+					lg: '18px',
+					'2xl': '22px',
+				},
+			},
+			th: {
+				fontSize: {
+					base: '22px',
+					lg: '22px',
+					'2xl': '22px',
+				},
 			},
 			h4: {
 				fontWeight: 'bold',

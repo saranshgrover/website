@@ -58,7 +58,6 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 						animate={{ opacity: 1 }}
 						src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
 						layoutId={`${project.id}-image`}
-						cursor='pointer'
 					/>
 				)}
 			</Box>
@@ -78,6 +77,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 							<>{<Tag tag={tag} key={index} />}</>
 						))}
 					</Stack>
+
 					<Stack direction='row' align='center' spacing='1em'>
 						{project.demo && (
 							<Link href={project.demo}>
@@ -137,7 +137,7 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 						))}
 					</Stack>
 				)}
-				<Divider />
+				<Divider borderColor={borderColor} w='100vw' />
 			</Container>
 			<Container maxW={{ base: '3xl', lg: '4xl', '2xl': '4xl' }}>
 				<ReactMarkdown

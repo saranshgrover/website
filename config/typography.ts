@@ -36,7 +36,11 @@ export default {
 			},
 		},
 		li: {
-			fontSize: '18px',
+			fontSize: {
+				base: '18px',
+				lg: '18px',
+				'2xl': '22px',
+			},
 		},
 	},
 }
