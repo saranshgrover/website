@@ -13,7 +13,7 @@ interface Props {
 export default function index({ md }: Props): ReactElement {
 	return (
 		<>
-			<Head title='Saransh Grover' />
+			<Head title='Saransh Grover' description={md} />
 			<Intro md={md} />
 			<Featured />
 		</>
