@@ -30,7 +30,7 @@ const timelines = [
 		title: 'Director and Vice Chair at the World Cube Association',
 		subheadline: 'August 2020 - August 2022',
 		description:
-			'With motivation to contribute further to my long-time hobby of Speedcubing, I ran, and got elected, as a Board member in the midst of COVID - and shaped our recovery back from having zero competitions surpassing our projections! I also also spearheaded our partnership with Spin Master and shaped priorities and directions for Software in the organization.',
+			'With motivation to contribute further to my long-time hobby of Speedcubing, I ran, and got elected, as a Board member in the midst of COVID - and shaped our recovery back from having zero competitions to surpassing our projections! I also spearheaded our partnership with Spin Master and shaped priorities and directions for Software in the organization.',
 		img: '/images/cube.png',
 		icon: <GiCube />,
 	},
