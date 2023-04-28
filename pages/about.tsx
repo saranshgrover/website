@@ -1,6 +1,4 @@
 import React, { ReactElement } from 'react'
-import Intro from '../components/Intro'
-import Featured from '../components/Featured'
 import Head from '../components/head'
 import { GetStaticProps } from 'next'
 import { getMdFor } from '../logic/markdown'

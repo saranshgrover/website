@@ -13,6 +13,8 @@ import {
 	VStack,
 	Flex,
 	Icon,
+	Wrap,
+	WrapItem,
 } from '@chakra-ui/react'
 import Tag from 'components/Tag'
 import { motion } from 'framer-motion'
@@ -72,11 +74,13 @@ export default function ProjectInfo({ project, md }: Props): ReactElement {
 					mb={'2em'}
 					spacing='2em'
 				>
-					<Stack maxW='100vw' direction='row' spacing={{ base: '0.5em', md: '2em' }} align='center'>
+					<Wrap maxW='100vw' direction='row' spacing={{ base: '0.5em', md: '2em' }} align='center'>
 						{project.tags.map((tag, index) => (
-							<>{<Tag tag={tag} key={index} />}</>
+							<WrapItem>
+								<>{<Tag tag={tag} key={index} />}</>
+							</WrapItem>
 						))}
-					</Stack>
+					</Wrap>
 
 					<Stack direction='row' align='center' spacing='1em'>
 						{project.demo && (

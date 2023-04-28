@@ -8,7 +8,7 @@ Soliyarn is a smart wearables startup creating sensor-based wearables for milita
 
 While smart, sensor equipped garments are growing in popularity, not many interfaces have been created that allow different clients to connect to their garments and see data through real-time visualizations relevant to their needs.
 
-In addition, Soliyarn has a line of products that aim to be created for both business use, as well as personal use. Thus, any interface must be <u>**adaptable**</u> and <u>**error-free**</u> to allow for commercial and personal use.
+In addition, Soliyarn has a line of products that aim to be created for both business use, as well as personal use. Thus, any interface must be <mark>**adaptable**</mark> and <mark>**error-free**</mark> to allow for commercial and personal use.
 
 > #### The goal for this project was to create a coherent and modular infrastructure and interface that lets Soliyarn's varied clients easily access and interact with their biosensing garments and visualizations.
 
@@ -45,12 +45,12 @@ I conducted interpretation sessions with the business leaders and researchers wh
 Some key takeaways from these sessions were:
 
 1. The most important roadblock for clients currently was an easy way to connect, configure, and manage Soliyarn products in one place. Clients often mentioned they were unable to connect devices without the support of Soliyarn staff, so providing ways to get support and feedback from staff was also essential.
-2. There may be some <u>software limitations</u> depending on the client that we must be aware of as designers and engineers. Due to these limitations, the portal must be adaptable to older, less capable devices with lower RAM and GPU's. This was specifically important for the real-time visualizations
+2. There may be some <mark>software limitations</mark> depending on the client that we must be aware of as designers and engineers. Due to these limitations, the portal must be adaptable to older, less capable devices with lower RAM and GPU's. This was specifically important for the real-time visualizations
    <br/><br/>
 
 #### **Defining the Structure**
 
-Before designing prototypes, we wanted to define the structure of the portal after receiving the development specifications. For this, we worked closely with engineers, designers and stakeholders to <u>create a complete task flow for the portal.</u> Creating this flow helped us document and understand key tasks for the portal and have a unified point of reference for design and development.
+Before designing prototypes, we wanted to define the structure of the portal after receiving the development specifications. For this, we worked closely with engineers, designers and stakeholders to <mark>create a complete task flow for the portal.</mark> Creating this flow helped us document and understand key tasks for the portal and have a unified point of reference for design and development.
 
 <div style="width:100%;display:flex;align-items:center;flex-direction:column">
 <img src='/images/projects/soliyarn-user-flow.png' alt='Image showing the User Flow Chart'>
@@ -59,7 +59,7 @@ Before designing prototypes, we wanted to define the structure of the portal aft
 
 #### **A/B Testing Two Wireframes**
 
-We created two different wireframes that we did <u>**A/B testing**</u> on with a small subset of clients to see which one was more intuitive. The key difference between the wireframes was the navigation styles and configuration setup. The first had **top-based navigation and dialog based configuration** while the second had **side-based navigation with dedicated configuration**. In the end, we decided to go with the side-based navigation and dedicated configuration as our A/B testing results found it to be more intuitive for users.
+We created two different wireframes that we did <mark>**A/B testing**</mark> on with a small subset of clients to see which one was more intuitive. The key difference between the wireframes was the navigation styles and configuration setup. The first had **top-based navigation and dialog based configuration** while the second had **side-based navigation with dedicated configuration**. In the end, we decided to go with the side-based navigation and dedicated configuration as our A/B testing results found it to be more intuitive for users.
 
 <div style="margin-bottom:1rem;display:flex">
 	<div style='float:left;width:50%;padding-right:1em;display:flex;align-items:center;flex-direction:column;align-content:center'>

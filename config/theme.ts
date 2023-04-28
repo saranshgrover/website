@@ -27,10 +27,19 @@ const theme = extendTheme({
 					backgroundSize: '100% 88%',
 				},
 			},
+			b: {
+				color: mode('#6180FE', '#00cdcd')(props),
+			},
 			u: {
-				textDecorationColor: mode('#00cdcd', 'teal')(props),
-				textDecorationThickness: '0.2em',
-				textUnderlineOffset: '0.3em',
+				bgColor: mode('lightblue', 'lightblue')(props),
+				color: mode('white', 'black')(props),
+				// textDecorationColor: mode('#00cdcd', 'teal')(props),
+				// textDecorationThickness: '0.2em',
+				// textUnderlineOffset: '0.3em',
+			},
+			mark: {
+				bgColor: mode('lightblue', 'lightblue')(props),
+				// color: mode('black', 'white')(props),
 			},
 			li: {
 				fontSize: {

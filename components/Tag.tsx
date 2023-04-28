@@ -12,6 +12,7 @@ const MotionTag = motion(ChakraTag)
 export default function Tag({ tag, motion = true, ...props }: Props): ReactElement {
 	return (
 		<MotionTag
+			overflow='hidden'
 			whileHover={{ scale: motion ? 1.2 : 1 }}
 			variant='subtle'
 			colorScheme='cyan'

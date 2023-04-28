@@ -1,10 +1,6 @@
 import React, { ReactElement } from 'react'
-import { Flex, useBreakpointValue, Stack, Container, Box } from '@chakra-ui/react'
+import { Flex, useBreakpointValue, Stack, Container, Box, Heading, Center, Text } from '@chakra-ui/react'
 import { IntersectionObserver } from '../contexts/IntersectionObserver'
-import About from './About'
-import ScaleBox from '../components/ScaleBox'
-import content from '../content/intro'
-import Social from './Social'
 // import { Image } from 'components/Image'
 import Image from 'next/image'
 import styled from '@emotion/styled'
@@ -13,6 +9,7 @@ import rehypeRaw from 'rehype-raw'
 import ChakraUIRenderer from 'config/ChakraMdRenderer'
 import ReactMarkdown from 'react-markdown'
 import profilePic from '../public/images/saransh_potrait.jpeg'
+import Timeline from './Timeline'
 
 interface Props {
 	md: string
@@ -23,16 +20,24 @@ export default function AboutMe({ md }: Props): ReactElement {
 	const router = useRouter()
 
 	return (
-		<Flex direction={['column', 'row']} justify='space-around' align='center' p='4'>
-			<Stack direction={'column'}>
-				<Container maxW={{ base: 'xl', xl: '3xl' }}>
-					<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
-				</Container>
-				<Social />
-			</Stack>
-			<Flex h='35vmax' w='35vmax' justify='center' align={'center'} mt={{ base: '5em', lg: 0 }}>
-				<Image src={profilePic} alt='Saransh Image' priority />
+		<Box p='12'>
+			{/* <Heading as='h1'>Started with bits, fell in love with people</Heading> */}
+			<Flex direction={['column', 'row']} justify='space-around' align='flex-start' pb='8' w='100%'>
+				<Center w={{ base: '100%', lg: '35%' }} display={'block'} mb={{ base: '5em', lg: 0 }}>
+					<Image layout='responsive' src={profilePic} alt='Saransh Image' priority />
+				</Center>
+				<Stack direction={'column'} w={{ base: '100%', lg: '60%' }}>
+					<Container maxW={{ base: 'xl', xl: '4xl' }}>
+						<ReactMarkdown rehypePlugins={[rehypeRaw]} children={md} components={ChakraUIRenderer()} />
+					</Container>
+				</Stack>
 			</Flex>
-		</Flex>
+			<Box display={{ base: 'none', md: 'block' }}>
+				<Heading textAlign={'center'} as='h2'>
+					My Career Timeline
+				</Heading>
+				<Timeline />
+			</Box>
+		</Box>
 	)
 }

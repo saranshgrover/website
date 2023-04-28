@@ -11,6 +11,8 @@ import {
 	Stack,
 	Tag,
 	Text,
+	Wrap,
+	WrapItem,
 	useColorMode,
 	useColorModeValue,
 	useMediaQuery,
@@ -58,9 +60,9 @@ export function ProjectCoverBasic({ project }: { project: Project }): ReactEleme
 					align='center'
 					spacing='1em'
 				>
-					<Stack direction='row' spacing='0.5em' align='center'>
+					<Wrap direction='row' spacing='0.5em' align='center'>
 						{project.tags.map((tag, index) => (
-							<>
+							<WrapItem>
 								{tag.showIcon ? (
 									<MotionIcon
 										key={index}
@@ -75,9 +77,9 @@ export function ProjectCoverBasic({ project }: { project: Project }): ReactEleme
 										{tag.name}
 									</Tag>
 								)}
-							</>
+							</WrapItem>
 						))}
-					</Stack>
+					</Wrap>
 					{(project.demo || project.github) && (
 						<Stack direction='row' align='center' spacing='0.5em'>
 							{project.demo && (
