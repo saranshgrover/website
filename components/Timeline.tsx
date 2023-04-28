@@ -20,7 +20,7 @@ const timelines = [
 	},
 	{
 		title: 'Product Design Intern at Soliyarn',
-		subheadline: 'May - June 2022',
+		subheadline: 'May - August 2022',
 		description:
 			'In Summer 2022, I moved to the amazing city of Boston and worked at Soliyarn, a smart wearables startup where I led the project to design a web portal for the management and visualization of their smart garments like Impact Vests.',
 		icon: <FaTshirt />,
