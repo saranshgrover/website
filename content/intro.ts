@@ -1,5 +1,5 @@
 export default {
 	name: 'Saransh Grover',
-	titles: ['Product Designer & User Researcher'],
+	titles: ['UX Engineer & Designer'],
 	location: 'Washington DC',
 }
