@@ -11,6 +11,14 @@ type Props = {}
 
 const timelines = [
 	{
+		title: 'UX Developer at Olliv by Coinflip',
+		subheadline: 'June 2023 - Present',
+		description:
+			"After my Masters, I joined Olliv by Coinflip, Chicago's fastest growing company for the past 2 years. At Coinflip, I work really closely with the product and marketing teams to design and develop experiences that lead to the best customer conversion, and thereby working closely in designing and developing efficient user experiences and journeys.",
+		icon: <BsCodeSlash />,
+		img: '/images/olliv.avif',
+	},
+	{
 		title: 'M.S. in Huamn-Computer Interaction from University of Maryland',
 		subheadline: '2021 - 2023',
 		description:

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import rehypeRaw from 'rehype-raw'
 import ChakraUIRenderer from 'config/ChakraMdRenderer'
 import ReactMarkdown from 'react-markdown'
-import profilePic from '../public/images/saransh_potrait.jpeg'
+import profilePic from '../public/images/saransh_potrait.jpg'
 import Timeline from './Timeline'
 
 interface Props {

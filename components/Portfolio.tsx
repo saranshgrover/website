@@ -51,9 +51,11 @@ export function ProjectCoverBasic({ project }: { project: Project }): ReactEleme
 						{project.name}
 					</Heading>
 				</AnimatedDivider>
-				<Text fontSize='sm' noOfLines={4} align='center' mb={{ base: '0.5em', md: '2em' }}>
-					{project.description}
-				</Text>
+				<Container maxW='3xl'>
+					<Text fontSize='sm' noOfLines={4} align='center' mb={{ base: '0.5em', md: '2em' }}>
+						{project.description}
+					</Text>
+				</Container>
 				<Stack
 					direction={{ base: 'column', lg: 'column' }}
 					justify={{ base: 'center', lg: 'space-around' }}

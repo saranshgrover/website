@@ -13,15 +13,18 @@ export default function Featured(): ReactElement {
 			<AnimatedDivider>
 				<Heading size='xl' textAlign='center'>
 					{' '}
-					Featured Projects{' '}
+					Featured Work{' '}
 				</Heading>
 			</AnimatedDivider>
 
 			<Center my='1em' mx={['0.5em', null, '6em']}>
-				<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr' }} gap={6}>
-					{featured.map((project, index) => (
-						<MyCard project={project} />
-					))}
+				<Grid templateColumns='1fr' gap={6}>
+					<ComingSoonCard project={featured[0]} />
+					<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr' }} gap={6}>
+						{featured.slice(1).map((project, index) => (
+							<MyCard project={project} />
+						))}
+					</Grid>
 				</Grid>
 			</Center>
 		</Box>
@@ -35,28 +38,110 @@ const MyCard = ({ project }: MyCardProps) => {
 	const [hover, setHover] = React.useState(false)
 	const { colorMode } = useColorMode()
 	return (
-		<Link href={`/projects/${project.id}`}>
+		<Center>
+			<Link href={project.mdFile ? `/projects/${project.id}` : ''}>
+				<Box
+					borderRadius={'lg'}
+					overflow={'hidden'}
+					as='button'
+					position='relative'
+					width='100%'
+					maxW={'80vw'}
+					height='100%'
+					maxH='50vh'
+					onMouseEnter={() => setHover(true)}
+					onMouseLeave={() => setHover(false)}
+				>
+					{project.image.includes('mp4') ? (
+						<Box borderRadius={'lg'} overflow={'hidden'}>
+							<video
+								style={{
+									objectFit: 'cover',
+									maxHeight: '50vh',
+									width: '100%',
+									maxWidth: '80vw',
+								}}
+								autoPlay
+								loop
+								muted
+							>
+								<source src={project.image} type='video/mp4' />
+							</video>
+						</Box>
+					) : (
+						<Image
+							fallback={<Skeleton height={'30vh'} />}
+							src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
+							opacity={hover ? 0.5 : 1}
+							alt={project.name}
+							height='100%'
+							width='100%'
+							objectFit='fill'
+							borderRadius={'lg'}
+						/>
+					)}
+					<Box
+						borderRadius={'lg'}
+						height='100%'
+						width={'100%'}
+						maxWidth={'100%'}
+						maxHeight={'100%'}
+						position='absolute'
+						bottom={0}
+						left={0}
+						right={0}
+						p={4}
+						bg='rgba(0, 0, 0, 0.8)'
+						color='white'
+						textAlign='center'
+						visibility={hover ? 'visible' : 'hidden'}
+					>
+						<ProjectCoverBasic project={project} />
+					</Box>
+				</Box>
+			</Link>
+		</Center>
+	)
+}
+
+const ComingSoonCard = ({ project }: MyCardProps) => {
+	const [hover, setHover] = React.useState(false)
+	const { colorMode } = useColorMode()
+	return (
+		<Center>
 			<Box
 				borderRadius={'lg'}
-				as='button'
 				position='relative'
 				width='100%'
 				maxW={'80vw'}
 				height='100%'
-				// maxH='50vh'
+				maxH='50vh'
 				onMouseEnter={() => setHover(true)}
 				onMouseLeave={() => setHover(false)}
 			>
-				<Image
-					fallback={<Skeleton height={'30vh'} />}
-					src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
-					opacity={hover ? 0.5 : 1}
-					alt={project.name}
-					height='100%'
-					width='100%'
-					objectFit='fill'
-					borderRadius={'lg'}
-				/>
+				{project.image.includes('mp4') ? (
+					<Box borderRadius={'lg'} width='100%' maxWidth={'80vw'} overflow={'hidden'}>
+						<video
+							style={{ objectFit: 'cover', maxHeight: '50vh', width: '100%', maxWidth: '80vw' }}
+							autoPlay
+							loop
+							muted
+						>
+							<source src={project.image} type='video/mp4' />
+						</video>
+					</Box>
+				) : (
+					<Image
+						fallback={<Skeleton height={'30vh'} />}
+						src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
+						opacity={hover ? 0.5 : 1}
+						alt={project.name}
+						height='100%'
+						width='100%'
+						objectFit='fill'
+						borderRadius={'lg'}
+					/>
+				)}
 				<Box
 					borderRadius={'lg'}
 					height='100%'
@@ -71,11 +156,11 @@ const MyCard = ({ project }: MyCardProps) => {
 					bg='rgba(0, 0, 0, 0.8)'
 					color='white'
 					textAlign='center'
-					visibility={hover ? 'visible' : 'hidden'}
+					// visibility={hover ? 'visible' : 'hidden'}
 				>
 					<ProjectCoverBasic project={project} />
 				</Box>
 			</Box>
-		</Link>
+		</Center>
 	)
 }

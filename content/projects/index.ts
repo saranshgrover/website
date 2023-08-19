@@ -4,13 +4,14 @@ import nodus from './nodus'
 import politech from './politech'
 import pulze from './pulze'
 import soliyarn from './soliyarn'
+import olliv from './olliv'
 import wca_usability from './wca_usability'
 import yeetcode from './yeetcode'
 import type { Tag } from '../tags'
 import { IconType } from 'react-icons'
 
 export default {
-	projects: [soliyarn, mango_lakay, wca_usability, politech, century_events_dashboard, nodus, pulze],
+	projects: [olliv, soliyarn, mango_lakay, wca_usability, politech, century_events_dashboard, nodus, pulze],
 }
 
 export interface Project {
@@ -23,7 +24,7 @@ export interface Project {
 	tags: Tag[]
 	image: string
 	darkImage?: string
-	mdFile: string
+	mdFile?: string
 	featuredInfo?: FeaturedInfo[]
 	passwordProtect?: boolean
 }
