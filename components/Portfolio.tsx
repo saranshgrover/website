@@ -185,7 +185,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 				>
 					<AnimatedDivider m={['0', '0 0 20px']}>
 						<Heading align='center' fontSize='clamp(24px, 5vw, 45px)'>
-							<Link href={`/projects/${project.id}`}>{project.name}</Link>
+							<Link href={project.mdFile ? `/projects/${project.id}` : project.demo ?? ''}>{project.name}</Link>
 						</Heading>
 					</AnimatedDivider>
 					<Text fontSize='sm' noOfLines={4} align='center' mb={{ base: '0.5em', md: '2em' }}>
@@ -257,7 +257,8 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 				</MotionContainer>
 			</Box>
 			<Box h={['auto', '40vh']}>
-				<Link href={`/projects/${project.id}`}>
+				<Link href={project.mdFile ? `/projects/${project.id}` : project.demo ?? ''}>
+
 					<MotionImage
 						variants={variants}
 						animate={controls}
@@ -271,7 +272,7 @@ export function ProjectCover({ project, isEven }: { project: Project; isEven: bo
 						objectFit='contain'
 						cursor='pointer'
 						whileHover={{ opacity: 1 }}
-						src={colorMode === 'dark' && project.darkImage ? project.darkImage : project.image}
+						src={(project.image.includes('mp4') || colorMode === "dark") && project.darkImage ? project.darkImage : project.image}
 					/>
 				</Link>
 			</Box>

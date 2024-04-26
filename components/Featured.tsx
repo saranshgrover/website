@@ -39,7 +39,7 @@ const MyCard = ({ project }: MyCardProps) => {
 	const { colorMode } = useColorMode()
 	return (
 		<Center>
-			<Link href={project.mdFile ? `/projects/${project.id}` : ''}>
+			<Link href={project.mdFile ? `/projects/${project.id}` : project.demo ? project.demo : ''}>
 				<Box
 					borderRadius={'lg'}
 					overflow={'hidden'}
@@ -156,7 +156,7 @@ const ComingSoonCard = ({ project }: MyCardProps) => {
 					bg='rgba(0, 0, 0, 0.8)'
 					color='white'
 					textAlign='center'
-					// visibility={hover ? 'visible' : 'hidden'}
+				// visibility={hover ? 'visible' : 'hidden'}
 				>
 					<ProjectCoverBasic project={project} />
 				</Box>

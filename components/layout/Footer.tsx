@@ -19,7 +19,7 @@ export default function Footer(): ReactElement {
 				boxShadow='md'
 			>
 				<Heading size={size} color={color} mr={{ base: '0', lg: '2em' }} mt={{ base: '2em', lg: '0' }}>
-					{'Designed & Developed by Saransh Grover © 2022'}
+					{'Designed & Developed by Saransh Grover © 2024'}
 				</Heading>
 				<Social />
 			</Flex>

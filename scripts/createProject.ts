@@ -3,7 +3,7 @@ import fs from 'fs'
 import { Project } from '../content/projects'
 console.log(process.argv.slice(2))
 const args = minimist(process.argv.slice(2))
-console.log(args.id)
+console.log(args)
 
 if (!args.id || !args.n) {
 	console.log(args)
