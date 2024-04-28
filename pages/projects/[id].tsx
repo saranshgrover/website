@@ -51,8 +51,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export async function getStaticPaths() {
 	const paths = getPaths('content/projects')
+	const validPaths = paths.filter(path => {
+		const project = content.projects.find(project => project.id === path.params.id);
+		return project && Boolean(project.mdFile);
+
+	})
 	return {
-		paths: paths,
+		paths: validPaths,
 		fallback: false,
 	}
 }
